@@ -9,19 +9,21 @@ const spotSchema = new Schema({
   longitude: Number,
   image: String,
   description: String,
-  comments: [{
-    username: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
+  comments: [
+    {
+      username: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+      content: String,
     },
-    content: String
-  }],
+  ],
   category: {
     type: String,
-    enum: ["", "", ""]
+    enum: ["", "", ""],
   },
 });
 
-const Spot = mongoose.model("Spot", spotSchema)
+const Spot = mongoose.model("Spot", spotSchema);
 
-module.exports = Spot
+module.exports = Spot;
