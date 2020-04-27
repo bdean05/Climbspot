@@ -23,7 +23,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: false
   })
 );
 app.use(cookieParser());
@@ -34,14 +34,20 @@ app.use("/users", usersRouter);
 
 hbs.registerPartials(__dirname + "/views/partials");
 
+//Routes configuration
+app.use("/", require("./routes/baseRoutes"));
+app.use("/", require("./routes/users"));
+app.use("/", require("./routes/index"));
+app.use("/auth", require("./routes/auth"));
+
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};

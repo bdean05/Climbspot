@@ -35,6 +35,29 @@ router.post("/signup", (req, res) => {
   });
 });
 
+router.post("/signin", (req, res) => {
+  const { email, password } = req.body;
+  user
+    .foundOne({ email: email })
+    .then(foundUser => {
+      if (!foundUser) {
+        errorMessage: "Error, invalid credentials!";
+        res.redirect("/auth/signin");
+      } else {
+        if (bcrypt.compareSync(password, foundUser.password)) {
+          req.session.currentUser = foundUser;
+          res.redirect("/");
+        } else {
+          errorMessage: "Error, invalid credentials!";
+          res.redirect("/auth/signin");
+        }
+      }
+    })
+    .catch(dbErr => {
+      console.log(dbErr);
+    });
+});
+
 router.get("/logout", (req, res) => {
   req.session.destroy(err => {
     res.redirect("/");
