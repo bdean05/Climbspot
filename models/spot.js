@@ -15,7 +15,7 @@ const spotSchema = new Schema({
     enum: ["", "", ""]
   },
   id_tags: [{
-    type: mongoose.Schema.Types.Object,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Tag"
   }]
 });
