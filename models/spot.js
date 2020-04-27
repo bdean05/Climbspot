@@ -5,14 +5,17 @@ const spotSchema = new Schema({
   name: String,
   ref: String,
   address: [""],
-  latitude: String,
-  longitude: String,
+  latitude: Number,
+  longitude: Number,
   image: "",
   description: [""],
-  Comment: [],
+  Comment: [String],
   category: {
     type: String,
     enum: ["", "", ""]
   },
-  id_tags: [{ type: Schema.Types.Object, ref: "Tag" }]
+  id_tags: [{
+    type: mongoose.Schema.Types.Object,
+    ref: "Tag"
+  }]
 });
