@@ -34,7 +34,18 @@ app.use("/users", usersRouter);
 
 hbs.registerPartials(__dirname + "/views/partials");
 
-app.locals.site_url = process.env.SITE_URL;
+//session
+app.use((req, res, next) => {
+  console.log(req.session.currentUser, "logged")
+  if (req.session.currentUser) {
+    res.locals.user = req.session.currentUser
+    res.locals.isLoggedIn = true
+  } else {
+    res.locals.isLoggedIn = false
+  }
+  next();
+})
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
