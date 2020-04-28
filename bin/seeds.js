@@ -7,7 +7,7 @@ const spots = [
   {
     name: "Label",
     ref: "1",
-    adress: "Bezaudun",
+    address: "Bezaudun",
     latitude: 5.171185,
     longitude: 44.65345,
     image: "",
@@ -18,7 +18,7 @@ const spots = [
   {
     name: "La Graville",
     ref: "25",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.648761,
     longitude: 5.078759,
     image: "",
@@ -29,7 +29,7 @@ const spots = [
   {
     name: "Le mur des étoiles",
     ref: "26",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.652589,
     longitude: 5.066158,
     image: "",
@@ -40,7 +40,7 @@ const spots = [
   {
     name: "Le mur des étoiles",
     ref: "30",
-    adress: "Pont-de-barret",
+    address: "Pont-de-barret",
     latitude: 44.607003,
     longitude: 5.012892,
     image: "",
@@ -51,7 +51,7 @@ const spots = [
   {
     ref: "31",
     name: "La borne de Jeanne",
-    adress: "Soyans",
+    address: "Soyans",
     latitude: 44.625489,
     longitude: 5.017309,
     image: "",
@@ -62,7 +62,7 @@ const spots = [
   {
     ref: "32",
     name: "Le petit cirque",
-    adress: "Soyans",
+    address: "Soyans",
     latitude: 44.627081,
     longitude: 5.029965,
     image: "",
@@ -73,7 +73,7 @@ const spots = [
   {
     ref: "33",
     name: "Rocher des Abeilles",
-    adress: "Soyans",
+    address: "Soyans",
     latitude: 44.627618,
     longi: 5.02232,
     image: "",
@@ -84,7 +84,7 @@ const spots = [
   {
     ref: "34",
     name: "Mur du son",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.65507,
     longitude: 5.058345,
     image: "",
@@ -95,7 +95,7 @@ const spots = [
   {
     ref: 37,
     name: "Le grand regardé",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.651711,
     longitude: 5.07207,
     image: "",
@@ -106,7 +106,7 @@ const spots = [
   {
     ref: "39",
     name: "Roche colombe",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.656026,
     longitude: 5.047226,
     image: "",
@@ -117,7 +117,7 @@ const spots = [
   {
     ref: "40",
     name: "La Poupoune",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.656053,
     longitude: 5.050053,
     image: "",
@@ -128,7 +128,7 @@ const spots = [
   {
     ref: "42",
     name: "L'aiguille de la tour",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.650803,
     longitude: 5.07275,
     image: "",
@@ -139,7 +139,7 @@ const spots = [
   {
     ref: "66",
     name: "Pas de Lauzun",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.66473,
     longitude: 5.0691,
     image: "",
@@ -150,7 +150,7 @@ const spots = [
   {
     ref: "771",
     name: "Les 3 becs",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.64229,
     longitude: 5.20192,
     image: "",
@@ -161,7 +161,7 @@ const spots = [
   {
     name: "La Ceyte",
     ref: "1939",
-    adress: "Saou",
+    address: "Saou",
     latitude: 44.65345,
     longitude: 5.078,
     image: "",

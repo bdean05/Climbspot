@@ -6,25 +6,21 @@ const User = require("../models/User");
 
 router.get("/signin", (req, res, next) => {
   res.render("auth/signin", {
-    errorMessage: "error",
+    errorMessage: "error"
   });
 });
 
 router.post("/signin", (req, res) => {
-  const {
-    email,
-    password
-  } = req.body;
+  const { email, password } = req.body;
   user
     .foundOne({
-      email: email,
+      email: email
     })
-    .then((foundUser) => {
+    .then(foundUser => {
       if (!foundUser) {
         errorMessage: "Error, invalid credentials!";
         res.redirect("/auth/signin");
-      }
-      else {
+      } else {
         if (bcrypt.compareSync(password, foundUser.password)) {
           req.session.currentUser = foundUser;
           res.redirect("/");
@@ -34,7 +30,7 @@ router.post("/signin", (req, res) => {
         }
       }
     })
-    .catch((dbErr) => {
+    .catch(dbErr => {
       console.log(dbErr);
     });
 });
@@ -45,18 +41,16 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", (req, res) => {
   console.log("heyheyehey");
-  const {
-    username,
-    password
-  } = req.body;
+  const { username, password } = req.body;
   console.log(req.body);
   User.findOne({
-      username: username,
-    }).then((user) => {
+    username: username
+  })
+    .then(user => {
       console.log("TOTO");
       if (user) {
-        res.render("auth/signup", {
-          errorMessage: "the username already exists!",
+        res.render("signup", {
+          errorMessage: "the username already exists!"
         });
       } else {
         console.log("hey i'm here");
@@ -64,23 +58,23 @@ router.post("/signup", (req, res) => {
         const hashPass = bcrypt.hashSync(password, salt);
         const newUser = {
           username,
-          password: hashPass,
+          password: hashPass
         };
         User.create(newUser)
-          .then((dbSuccess) => {
+          .then(dbSuccess => {
             console.log("Im HERE");
             res.redirect("/");
           })
-          .catch((err) => {
+          .catch(err => {
             console.log(err);
           });
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 });
 
 router.get("/logout", (req, res) => {
-  req.session.destroy((err) => {
+  req.session.destroy(err => {
     res.redirect("/");
   });
 });
