@@ -3,6 +3,7 @@ const router = new express.Router();
 
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const { Router } = require("express");
 
 // const salt = bcrypt.genSaltSync(bcryptSalt);
 
@@ -10,11 +11,17 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
+router.get("/signin", (req, res, next) => {
+  res.render("auth/signin", {
+    errorMessage: "error"
+  });
+});
+
 router.post("/signup", (req, res) => {
   const { username, email, password } = req.body;
   User.findOne({ username: username }).then(user => {
     if (user !== null) {
-      res.render("auth/signup", {
+      res.render("/auth/signup", {
         errorMessage: "the username already exists!"
       });
     } else {
@@ -26,7 +33,7 @@ router.post("/signup", (req, res) => {
       };
       User.create(newUser)
         .then(res => {
-          res.redirect("/signin");
+          res.redirect("/auth/signin");
         })
         .catch(err => {
           console.log(err);
