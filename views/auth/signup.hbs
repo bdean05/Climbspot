@@ -1,5 +1,9 @@
 <form class="form" action="/auth/signup" method="POST">
 
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+
     <label for="username">Username</label><br>
     <input type="text" name="username" placeholder="Your username" required="true" value="toto">
 

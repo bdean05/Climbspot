@@ -6,20 +6,20 @@ const User = require("../models/User");
 
 router.get("/signin", (req, res, next) => {
   res.render("auth/signin", {
-    errorMessage: "error",
+    errorMessage: "error"
   });
 });
 
 router.post("/signin", (req, res) => {
   const {
-    email,
+    username,
     password
   } = req.body;
-  user
-    .foundOne({
-      email: email,
+  User
+    .findOne({
+      username: username
     })
-    .then((foundUser) => {
+    .then(foundUser => {
       if (!foundUser) {
         errorMessage: "Error, invalid credentials!";
         res.redirect("/auth/signin");
@@ -34,7 +34,7 @@ router.post("/signin", (req, res) => {
         }
       }
     })
-    .catch((dbErr) => {
+    .catch(dbErr => {
       console.log(dbErr);
     });
 });
@@ -44,7 +44,6 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res) => {
-  console.log("heyheyehey");
   const {
     username,
     password
@@ -52,35 +51,32 @@ router.post("/signup", (req, res) => {
   console.log(req.body);
   User.findOne({
       username: username,
-    }).then((user) => {
-      console.log("TOTO");
-      if (user) {
-        res.render("auth/signup", {
-          errorMessage: "the username already exists!",
+    }).then((dbSuccess) => {
+      if (dbSuccess) {
+        res.render("signup", {
+          errorMessage: "the username already exists!"
         });
       } else {
-        console.log("hey i'm here");
         const salt = 10;
         const hashPass = bcrypt.hashSync(password, salt);
         const newUser = {
           username,
-          password: hashPass,
+          password: hashPass
         };
         User.create(newUser)
           .then((dbSuccess) => {
-            console.log("Im HERE");
-            res.redirect("/");
+            res.redirect("/auth/signin");
           })
-          .catch((err) => {
+          .catch(err => {
             console.log(err);
           });
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 });
 
 router.get("/logout", (req, res) => {
-  req.session.destroy((err) => {
+  req.session.destroy(err => {
     res.redirect("/");
   });
 });
