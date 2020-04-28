@@ -8,8 +8,8 @@ const spots = [
     name: "Label",
     ref: "1",
     address: "Bezaudun",
-    latitude: 5.171185,
-    longitude: 44.65345,
+    latitude: 44.65345,
+    longitude: 5.171185,
     image: "",
     description: "",
     comments: [],
@@ -38,7 +38,7 @@ const spots = [
     category: ""
   },
   {
-    name: "Le mur des étoiles",
+    name: "Le mur du son",
     ref: "30",
     address: "Pont-de-barret",
     latitude: 44.607003,
@@ -75,7 +75,7 @@ const spots = [
     name: "Rocher des Abeilles",
     address: "Soyans",
     latitude: 44.627618,
-    longi: 5.02232,
+    longitude: 5.02232,
     image: "",
     description: "",
     comments: [],
