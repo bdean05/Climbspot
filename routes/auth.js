@@ -44,7 +44,6 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res) => {
-  console.log("heyheyehey");
   const {
     username,
     password
@@ -53,13 +52,11 @@ router.post("/signup", (req, res) => {
   User.findOne({
       username: username,
     }).then((user) => {
-      console.log("TOTO");
       if (user) {
         res.render("auth/signup", {
           errorMessage: "the username already exists!",
         });
       } else {
-        console.log("hey i'm here");
         const salt = 10;
         const hashPass = bcrypt.hashSync(password, salt);
         const newUser = {
@@ -68,8 +65,7 @@ router.post("/signup", (req, res) => {
         };
         User.create(newUser)
           .then((dbSuccess) => {
-            console.log("Im HERE");
-            res.redirect("/");
+            res.redirect("/auth/signin");
           })
           .catch((err) => {
             console.log(err);
