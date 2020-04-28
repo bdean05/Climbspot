@@ -34,7 +34,7 @@ app.use("/users", usersRouter);
 
 hbs.registerPartials(__dirname + "/views/partials");
 
-<<<<<<< HEAD
+
 //Routes configuration
 app.use("/", require("./routes/baseRoutes"));
 app.use("/", require("./routes/users"));
@@ -42,7 +42,7 @@ app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 
 app.locals.site_url = process.env.SITE_URL;
-=======
+
 //session
 app.use((req, res, next) => {
   console.log(req.session.currentUser, "logged")
@@ -55,7 +55,7 @@ app.use((req, res, next) => {
   next();
 })
 
->>>>>>> 6aa3cbd9bc3b8b0ceadc8773c6a86bf887acb418
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
