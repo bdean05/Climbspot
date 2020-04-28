@@ -16,7 +16,21 @@
 
 {{! search - most viewed - random }}
 <section>
-    <h3>Find yours</h3> <img src="" alt="magnifying glass">
+    <hr>
+    <form class="form" id="search_bar" method='GET' action="/">
+        <div class="row">
+            <input id="search_query" type="text" class="input" value="" placeholder="Find yours.." name="search">
+            <button class="btn">Search
+                <i id="btn_search" class="is-clickable fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <hr>
+    {{#each spotlist}}
+    <a href="/result/{{this._id}}">{{this.name}}</a>
+    {{/each}}
+
+    <div id="search_results"></div>
     <h5>most viewed |</h5>
     <h5> random</h5>
 

@@ -1,6 +1,8 @@
 const mapCenter = {
-    lat: 47.824905,
-    lng: 2.618787
+    lat: 44.486280,
+    lng: 4.747274
+
+
 };
 
 // Initialize and add the map
@@ -9,7 +11,7 @@ function initMapOneSpot() {
     // The map, centred at spotMarker
     var map = new google.maps.Map(
         document.getElementById('map'), {
-            zoom: 4,
+            zoom: 8,
             center: mapCenter
         });
 
