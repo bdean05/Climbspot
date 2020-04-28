@@ -6,47 +6,67 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const hbs = require("hbs");
+const mongoose = require("mongoose")
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 
 var app = express();
-
-const router = require("./routes/auth");
-app.use("/", router);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-
+hbs.registerPartials(__dirname + "/views/partials");
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: false
+    extended: false,
   })
 );
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-
-hbs.registerPartials(__dirname + "/views/partials");
+// connect to database
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then((self) => {
+    console.log("Connected to ${self.connection.name}");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 //Routes configuration
+<<<<<<< HEAD
 app.use("/", require("./routes/spots.api"));
 app.use("/", require("./routes/baseRoutes"));
 app.use("/", require("./routes/users"));
+=======
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+>>>>>>> 09aff1510778e9ff662d98ec7eeb7592b0afd94b
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+
+
 
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
+<<<<<<< HEAD
 app.use(function (req, res, next) {
   next(createError(404));
 });
+=======
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
+>>>>>>> 09aff1510778e9ff662d98ec7eeb7592b0afd94b
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -59,8 +79,11 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+<<<<<<< HEAD
 const listener = app.listen(process.env.PORT, () => {
   console.log(`app started at ${process.env.SITE_URL}:${process.env.PORT}`);
 });
 
+=======
+>>>>>>> 09aff1510778e9ff662d98ec7eeb7592b0afd94b
 module.exports = app;
