@@ -12,12 +12,12 @@ router.get("/signin", (req, res, next) => {
 
 router.post("/signin", (req, res) => {
   const {
-    email,
+    username,
     password
   } = req.body;
-  user
-    .foundOne({
-      email: email
+  User
+    .findOne({
+      username: username
     })
     .then(foundUser => {
       if (!foundUser) {
@@ -50,10 +50,9 @@ router.post("/signup", (req, res) => {
   } = req.body;
   console.log(req.body);
   User.findOne({
-      username: username
-    })
-    .then(user => {
-      if (user) {
+      username: username,
+    }).then((dbSuccess) => {
+      if (dbSuccess) {
         res.render("signup", {
           errorMessage: "the username already exists!"
         });
@@ -65,8 +64,8 @@ router.post("/signup", (req, res) => {
           password: hashPass
         };
         User.create(newUser)
-          .then(dbSuccess => {
-            res.redirect("/");
+          .then((dbSuccess) => {
+            res.redirect("/auth/signin");
           })
           .catch(err => {
             console.log(err);
