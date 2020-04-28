@@ -40,7 +40,6 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res) => {
-<<<<<<< HEAD
   console.log("heyheyehey");
   const { username, password } = req.body;
   console.log(req.body);
@@ -49,16 +48,6 @@ router.post("/signup", (req, res) => {
   })
     .then(user => {
       console.log("TOTO");
-=======
-  const {
-    username,
-    password
-  } = req.body;
-  console.log(req.body);
-  User.findOne({
-      username: username,
-    }).then((user) => {
->>>>>>> 5c559adb8f4036969a37656c313628158f5bbb0f
       if (user) {
         res.render("signup", {
           errorMessage: "the username already exists!"
@@ -71,14 +60,9 @@ router.post("/signup", (req, res) => {
           password: hashPass
         };
         User.create(newUser)
-<<<<<<< HEAD
           .then(dbSuccess => {
             console.log("Im HERE");
             res.redirect("/");
-=======
-          .then((dbSuccess) => {
-            res.redirect("/auth/signin");
->>>>>>> 5c559adb8f4036969a37656c313628158f5bbb0f
           })
           .catch(err => {
             console.log(err);
