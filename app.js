@@ -42,11 +42,9 @@ mongoose
 //Routes configuration
 app.use("/", require("./routes/spots.api"));
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 
 
 
