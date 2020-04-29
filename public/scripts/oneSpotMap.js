@@ -14,21 +14,20 @@ function initMapOneSpot() {
         });
 
     // The marker, positioned at spotMarker
-    axios.get("/api/spots/:id")
-        .then(apiRes => {
-            const spots = apiRes.data;
-            spots.forEach(spot => {
-                var marker = new google.maps.Marker({
-                    position: {
-                        lat: spot.latitude,
-                        lng: spot.longitude
-                    },
-                    map: map
-                });
-            })
-        }).catch(apiErr => {
-            console.log(apiErr)
+    axios.get("/api/spots/").then(apiRes => {
+        const spots = apiRes.data;
+        spots.forEach(spot => {
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: spot.latitude,
+                    lng: spot.longitude
+                },
+                map: map
+            });
         })
+    }).catch(apiErr => {
+        console.log(apiErr)
+    })
     console.log(spotMarker)
 }
 

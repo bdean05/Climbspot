@@ -6,22 +6,27 @@ const User = require("../models/User");
 
 router.get("/signin", (req, res, next) => {
   res.render("auth/signin", {
-    errorMessage: "error"
+    errorMessage: "error",
   });
 });
 
 router.post("/signin", (req, res) => {
-  const { username, password } = req.body;
+  const {
+    username,
+    password
+  } = req.body;
   User.findOne({
-    username: username
-  })
-    .then(findUser => {
+      username: username,
+    })
+    .then((findUser) => {
       if (!findUser) {
         errorMessage: "Error, invalid credentials!";
         res.redirect("/auth/signin");
-      } else {
+      }
+      else {
         if (bcrypt.compareSync(password, findUser.password)) {
           req.session.currentUser = findUser;
+          console.log(`${req.session.currentUser.username} is connected`)
           res.redirect("/");
         } else {
           errorMessage: "Error, invalid credentials!";
@@ -29,7 +34,7 @@ router.post("/signin", (req, res) => {
         }
       }
     })
-    .catch(dbErr => {
+    .catch((dbErr) => {
       console.log(dbErr);
     });
 });
@@ -39,37 +44,40 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res) => {
-  const { username, password } = req.body;
+  const {
+    username,
+    password
+  } = req.body;
   console.log(req.body);
   User.findOne({
-    username: username
-  })
-    .then(user => {
-      if (user) {
+      username: username,
+    })
+    .then((dbSuccess) => {
+      if (dbSuccess) {
         res.render("signup", {
-          errorMessage: "the username already exists!"
+          errorMessage: "the username already exists!",
         });
       } else {
         const salt = 10;
         const hashPass = bcrypt.hashSync(password, salt);
         const newUser = {
           username,
-          password: hashPass
+          password: hashPass,
         };
         User.create(newUser)
-          .then(dbSuccess => {
-            res.redirect("/");
+          .then((dbSuccess) => {
+            res.redirect("/auth/signin");
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err);
           });
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 router.get("/logout", (req, res) => {
-  req.session.destroy(err => {
+  req.session.destroy((err) => {
     res.redirect("/");
   });
 });

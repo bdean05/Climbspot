@@ -4,25 +4,64 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-const logger = require("morgan");
 const hbs = require("hbs");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
-
 const app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
+
 app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
 hbs.registerPartials(__dirname + "/views/partials");
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(logger("dev"));
-app.use(express.json());
 app.use(
   express.urlencoded({
     extended: false
   })
 );
+app.use(express.json());
+app.use(cookieParser());
+//session
+
+app.use(
+  session({
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    }),
+    secret: "ilksdfsfsfsflkftressecret",
+    cookie: {
+      maxAge: 60000
+    },
+    saveUninitialized: false,
+    resave: false
+  })
+);
+
+//QUESTION!!!
+
+// middleware custom
+
+function checklogStatus(req, res, next) {
+  res.locals.user = res.session.currentUser ? req.session.currentUser : null;
+  res.locals.isLoggedIn = Boolean(req.session.currentUser);
+  next();
+}
+
+// app.use(checklogStatus);
+
+//QUESTION !!!
+
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.user = req.session.currentUser;
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.isLoggedIn = false;
+  }
+  next();
+});
 
 // connect to database
 mongoose
@@ -31,9 +70,7 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true
   })
-  .then(self => {
-    console.log("Connected to ${self.connection.name}");
-  })
+  .then(self => {})
   .catch(err => {
     console.log(err);
   });
@@ -45,6 +82,7 @@ app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/", indexRouter);
 app.use("/", require("./routes/spots"));
+app.use("/", require("./routes/result"));
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
