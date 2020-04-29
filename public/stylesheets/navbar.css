@@ -88,12 +88,21 @@
 
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
+  .nav-bar {
+    display: flex;
+    align-items: initial;
+    display: inline-block;
+  }
+  
   #nav-list {
-    width:100%;
+    margin-top: 15px;
+    width: 100%;
   }
   .sign-up-in {
     font-size: 17px;
     float:none;
+    width: 100%;
+    text-align: right;
   }
   .nav-item {
     font-size: 17px;
