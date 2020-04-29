@@ -1,8 +1,71 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font-family: 'Montserrat Alternates', sans-serif;
+  width: 100%;
+  margin: 0px;
+
 }
 
 a {
   color: #00B7FF;
+}
+
+ul#horizontal-list {
+	list-style: none;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+	}
+
+.menu-header {
+  background : white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -moz-box-shadow:    0px 0px 5px 0px #000;
+  -webkit-box-shadow: 0px 0px 5px 0px #000;
+  box-shadow:         0px 0px 5px 0px #000;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sign-up-in {
+  text-align: right;
+  width: 33%; 
+  text-decoration: none;
+}
+
+.main-menu {
+  text-align: center;
+  width: 33%; 
+}
+  
+.left-side  {
+  text-align: left;
+  width: 33%; 
+}
+
+.home-image  {
+  background-image: url("/images/home-image.jpg");
+  height: 200px;
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+}
+
+.home-logo  {
+  padding-top: 90px; 
+  text-align: center; 
+  color: white; 
+  font-size: 45px;
 }
