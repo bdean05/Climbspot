@@ -4,75 +4,37 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 const hbs = require("hbs");
-const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 
 const app = express();
 
 // view engine setup
-app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(logger("dev"));
+app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: false
   })
 );
-app.use(express.json());
-app.use(cookieParser());
-
-//session
-
-app.use(
-  session({
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection
-    }),
-    secret: "ilksdfsfsfsflkftressecret",
-    cookie: {
-      maxAge: 60000,
-    },
-    saveUninitialized: false,
-    resave: false,
-  })
-);
-
-//QUESTION!!!
-
-// middleware custom
-
-// function checklogStatus(req, res, next) {
-//   res.locals.user = res.session.currentUser ? req.session.currentUser : null;
-//   res.locals.isLoggedIn = Boolean(req.session.currentUser);
-//   next();
-// }
-
-// app.use(checklogStatus);
-
-//QUESTION !!!
-
-app.use((req, res, next) => {
-  if (req.session.currentUser) {
-    res.locals.user = req.session.currentUser;
-    res.locals.isLoggedIn = true;
-  } else {
-    res.locals.isLoggedIn = false;
-  }
-  next();
-});
 
 // connect to database
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
-  .then((self) => {})
-  .catch((err) => {
+  .then(self => {
+    console.log("Connected to ${self.connection.name}");
+  })
+  .catch(err => {
     console.log(err);
   });
 
@@ -82,19 +44,18 @@ const indexRouter = require("./routes/index");
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/", indexRouter);
-app.use('/', require('./routes/result'));
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -103,5 +64,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// app.listen(process.env.PORT, () => {
+//   console.log(`Listening on http://localhost:${process.env.PORT}`);
+// });
 
 module.exports = app;
