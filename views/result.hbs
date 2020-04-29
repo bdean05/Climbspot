@@ -1,4 +1,6 @@
-<h3>{{searchresultdb.name}}</h3>
+<h3 id="showOnMap" data-latitude={{searchresultdb.latitude}} data-longitude={{searchresultdb.longitude}}>
+    {{searchresultdb.name}}
+</h3>
 
 {{! Google map }}
 <style>
@@ -9,4 +11,5 @@
         box-shadow: 1px 4px 11px gray;
     }
 </style>
+
 <div id="map"></div> {{! <-- google map just here / don't ask how or why... }}

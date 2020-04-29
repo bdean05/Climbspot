@@ -18,7 +18,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: false
   })
 );
 app.use(express.json());
@@ -28,14 +28,14 @@ app.use(cookieParser());
 app.use(
   session({
     store: new MongoStore({
-      mongooseConnection: mongoose.connection,
+      mongooseConnection: mongoose.connection
     }),
     secret: "ilksdfsfsfsflkftressecret",
     cookie: {
-      maxAge: 60000,
+      maxAge: 60000
     },
     saveUninitialized: false,
-    resave: false,
+    resave: false
   })
 );
 
@@ -68,10 +68,10 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
-  .then((self) => {})
-  .catch((err) => {
+  .then(self => {})
+  .catch(err => {
     console.log(err);
   });
 
@@ -81,19 +81,20 @@ const indexRouter = require("./routes/index");
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/", indexRouter);
+app.use("/", require("./routes/spots"));
 app.use("/", require("./routes/result"));
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
