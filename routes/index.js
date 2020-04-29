@@ -12,8 +12,13 @@ const Spot = require('../models/Spot')
 
 router.get('/', (req, res, next) => {
   console.log(req.query)
+  const inputQuery = req.query.search;
+
   Spot.find({
-      name: req.query.search
+      name: {
+        $regex: inputQuery,
+        $options: 'i'
+      }
     })
     .then((dbResult) => {
       console.log(dbResult)

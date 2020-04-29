@@ -16,7 +16,7 @@ function initMapOneSpot() {
         });
 
     // The marker, positioned at spotMarker
-    axios.get("/api/spots/").then(apiRes => {
+    axios.get("/api/spots").then(apiRes => {
         const spots = apiRes.data;
         spots.forEach(spot => {
             var marker = new google.maps.Marker({

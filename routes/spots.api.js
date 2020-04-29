@@ -11,24 +11,14 @@ router.get("/api/spots", (req, res) => {
 });
 
 
-// router.get("/api/spots/:id", (req, res) => {
-//     Spot.findById(req.params.id).then(dbResult => {
-//         res.status(200).json(dbResult)
-//     }).catch(err => {
-//         res.status(500).json(err)
-//     })
-// });
+router.get("/api/spots/:id", (req, res) => {
+    Spot.findById(req.params.id).then(dbResult => {
+        res.status(200).json(dbResult)
+    }).catch(err => {
+        res.status(500).json(err)
+    })
+});
 
-// router.get('/testlist', (req, res, next) => {
-//     console.log(req.query)
-//     Spot.find({
-//             name: req.query.search
-//         })
-//         .then((dbResult) => {
-//             res.render("testlist", {
-//                 spotlist: dbResult,
-//             });
-//         })
-// })
+
 
 module.exports = router;
