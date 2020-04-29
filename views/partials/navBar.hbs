@@ -1,35 +1,18 @@
-<section class="menu-header">
+<nav class="nav-bar">
+    {{!-- {{! main bar}} --}}
+    <ul class="nav-list">
+        <li><a class="nav-link" href="/"></a> Home</li>
+        <li><a class="nav-link" href="/blog"></a>Blog</li>
+        <li><a class="nav-link" href="/about"></a>About</li>
 
-    <div class="left-side">
-    
-    </div>
-
-    {{! main bar}}
-    <div class="main-menu">
-        <ul id="horizontal-list">
-        <li>Home</li>
-        <li>Blog</li>
-        <li>About</li>
-        <li>Favorites</li>
+        {{!-- {{! login bar}} --}}
+        {{#if isLoggedIn}}
+        <li><a class="nav-link" href="/"></a>Favorites</li>
+        <li>{{username}}</li>
+        <li><a class="nav-link" href="/logout"></a>Log out</li>
+        {{else}}
+        <li><a class="nav-link" href="/signin"></a>Sign in | </li>
+        {{/if}}
     </ul>
-</div>
 
-    {{! login bar}}
-    {{!-- <div class="sign-up-in">
-        <ul id="horizontal-list">
-        <li>Sign in | </li>
-        <li>Sing up</li>
-        <li>Log out</li>
-    </ul>--}}
-    <div class="sign-up-in">
-        <ul id="horizontal-list">
-    {{#if isLoggedIn}}
-    {{!-- <li><a href="/aut/profile">Profile</a></li> --}}
-    <li><a href="/auth/logout">Log out</a></li>
-    {{else}}
-    <li><a href="/auth/signin">Sign in</a></li>
-    <li><a href="/auth/signup">Sign up</a></li>
-    {{/if}}
-    </ul>
-</div>
-</section>
+</nav>

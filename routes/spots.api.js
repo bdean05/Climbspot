@@ -20,5 +20,4 @@ router.get("/api/spots/:id", (req, res) => {
 });
 
 
-
 module.exports = router;
