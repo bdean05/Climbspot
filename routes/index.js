@@ -17,13 +17,13 @@ router.get('/', (req, res) => {
   Spot.find({
       name: {
         $regex: inputQuery || "default",
-        $options: 'i',
+        $options: 'im',
       }
     })
     .then((dbResult) => {
       console.log(dbResult)
       res.render("index", {
-        spotlist: dbResult,
+        spotresult: dbResult,
         title: 'Express',
         scripts: ["manySpotsMap.js"]
       });
