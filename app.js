@@ -24,6 +24,36 @@ app.use(
   })
 );
 
+//session
+
+app.use(
+  session({
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    }),
+    secret: "ilksdfsfsfsflkftressecret",
+    cookie: {
+      maxAge: 60000,
+    },
+    saveUninitialized: false,
+    resave: false,
+  })
+);
+
+//QUESTION!!!
+
+// middleware custom
+
+// function checklogStatus(req, res, next) {
+//   res.locals.user = res.session.currentUser ? req.session.currentUser : null;
+//   res.locals.isLoggedIn = Boolean(req.session.currentUser);
+//   next();
+// }
+
+// app.use(checklogStatus);
+
+//QUESTION !!!
+
 // connect to database
 mongoose
   .connect(process.env.MONGODB_URI, {
@@ -65,9 +95,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-// app.listen(process.env.PORT, () => {
-//   console.log(`Listening on http://localhost:${process.env.PORT}`);
-// });
 
 module.exports = app;
