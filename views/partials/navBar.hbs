@@ -5,26 +5,27 @@
         <li><a class="nav-link" href="/blog"></a>Blog</li>
         <li><a class="nav-link" href="/about"></a>About</li>
 
-    <div class="left-side">
-    
-    </div>
+        <div class="left-side">
 
-    {{! main bar}}
-    <div class="main-menu">
-        <ul id="horizontal-list">
-        <li style="margin: 0px 10px 0px 0px;">Home</li>
-        <li style="margin: 0px 10px 0px 10px;">About</li>
-        <li style="margin: 0px 10px 0px 10px;">Blog</li>
-        <li style="margin: 0px 00px 0px 10px;">contact</li>
-        {{!-- <li>Favorites</li>--}}
-        {{!-- {{! login bar}} --}}
-        {{#if isLoggedIn}}
-        <li><a class="nav-link" href="/"></a>Favorites</li>
-        <li>{{username}}</li>
-        <li><a class="nav-link" href="/logout"></a>Log out</li>
-        {{else}}
-        <li><a class="nav-link" href="/signin"></a>Sign in | </li>
-        {{/if}}
-    </ul>
+        </div>
+
+        {{! main bar}}
+        <div class="main-menu">
+            <ul id="horizontal-list">
+                <li style="margin: 0px 10px 0px 0px;">Home</li>
+                <li style="margin: 0px 10px 0px 10px;">About</li>
+                <li style="margin: 0px 10px 0px 10px;">Blog</li>
+                <li style="margin: 0px 00px 0px 10px;">contact</li>
+
+                {{!-- <li>Favorites</li>--}}
+                {{!-- {{! login bar}} --}}
+                {{#if isLoggedIn}}
+                <li><a class="nav-link" href="/"></a>Favorites</li>
+                <li>{{username}}</li>
+                <li><a class="nav-link" href="/logout"></a>Log out</li>
+                {{else}}
+                <li><a class="nav-link" href="/signin"></a>Sign in | </li>
+                {{/if}}
+            </ul>
 
 </nav>

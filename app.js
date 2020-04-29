@@ -44,6 +44,7 @@ const indexRouter = require("./routes/index");
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/", indexRouter);
+app.use("/", require("./routes/spots"));
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
@@ -64,9 +65,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-// app.listen(process.env.PORT, () => {
-//   console.log(`Listening on http://localhost:${process.env.PORT}`);
-// });
 
 module.exports = app;
