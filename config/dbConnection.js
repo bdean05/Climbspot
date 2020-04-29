@@ -7,7 +7,7 @@ mongoose
         useUnifiedTopology: true,
     })
     .then((self) => {
-        console.log("Connected to ${self.connection.name}");
+        console.log(`Connected to ${self.connection.name}`);
     })
     .catch((err) => {
         console.log(err);

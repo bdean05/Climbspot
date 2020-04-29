@@ -1,5 +1,9 @@
 <form class="form" action="/auth/signup" method="POST">
 
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+
     <label for="username">Username</label><br>
     <input type="text" name="username" placeholder="Your username" required="true" value="toto">
 
@@ -16,5 +20,5 @@
     {{/if}}
     <button class="btn">Submit</button>
 
-    <p>Already have an account?<a href="/signin">Sign in</a></p>
+    <p>Already have an account?<a href="/auth/signin">Sign in</a></p>
 </form>
