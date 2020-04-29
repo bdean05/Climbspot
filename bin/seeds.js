@@ -3,8 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const Spot = require("../models/Spot");
 
-const spots = [
-  {
+const spots = [{
     name: "Label",
     ref: "1",
     address: "Bezaudun",
@@ -178,7 +177,7 @@ mongoose
     useUnifiedTopology: true
   })
   .then(self => {
-    console.log("Connected to ${self.connection.name}");
+    console.log(`Connected to ${self.connection.name}`);
     Spot.create(spots)
       .then(createdSpots => console.log(createdSpots))
       .catch(err => console.log(err));

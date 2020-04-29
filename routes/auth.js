@@ -6,16 +6,16 @@ const User = require("../models/User");
 
 router.get("/signin", (req, res, next) => {
   res.render("auth/signin", {
-    errorMessage: "error"
+    errorMessage: "error",
   });
 });
 
 router.post("/signin", (req, res) => {
   const { username, password } = req.body;
   User.findOne({
-    username: username
+    username: username,
   })
-    .then(findUser => {
+    .then((findUser) => {
       if (!findUser) {
         errorMessage: "Error, invalid credentials!";
         res.redirect("/auth/signin");
@@ -29,7 +29,7 @@ router.post("/signin", (req, res) => {
         }
       }
     })
-    .catch(dbErr => {
+    .catch((dbErr) => {
       console.log(dbErr);
     });
 });
@@ -42,34 +42,34 @@ router.post("/signup", (req, res) => {
   const { username, password } = req.body;
   console.log(req.body);
   User.findOne({
-    username: username
+    username: username,
   })
-    .then(user => {
-      if (user) {
+    .then((dbSuccess) => {
+      if (dbSuccess) {
         res.render("signup", {
-          errorMessage: "the username already exists!"
+          errorMessage: "the username already exists!",
         });
       } else {
         const salt = 10;
         const hashPass = bcrypt.hashSync(password, salt);
         const newUser = {
           username,
-          password: hashPass
+          password: hashPass,
         };
         User.create(newUser)
-          .then(dbSuccess => {
+          .then((dbSuccess) => {
             res.redirect("/");
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err);
           });
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 router.get("/logout", (req, res) => {
-  req.session.destroy(err => {
+  req.session.destroy((err) => {
     res.redirect("/");
   });
 });
