@@ -1,5 +1,12 @@
-<div id="spot" data-spotid="{{spot._id}}">
+<h3>{{searchresultdb.name}}</h3>
 
-    <p>{{spot.title}}</p>
-    <p>{{spot.url}}</p>
-</div>
+{{! Google map }}
+<style>
+    #map {
+        height: 400px;
+        width: 70%;
+        border-radius: 12px;
+        box-shadow: 1px 4px 11px gray;
+    }
+</style>
+<div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
