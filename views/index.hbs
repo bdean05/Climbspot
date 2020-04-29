@@ -1,22 +1,30 @@
 {{! with title and background image }}
 <header>
-    <h1>ClimbSpot</h1>
+    <h1>ClimbSpot.</h1>
     <div></div> {{! <-- background here }}
-    <style>
-        /* Set the size of the div element that contains the map */
-        #map {
-            height: 400px;
-            /* The height is 400 pixels */
-            width: 70%;
-            /* The width is the width of the web page */
-        }
-    </style>
 </header>
 
 
 {{! search - most viewed - random }}
 <section>
-    <h3>Find yours</h3> <img src="" alt="magnifying glass">
+    <hr>
+    <form class="form" id="search_bar" method='GET' action="/">
+        <div class="row">
+            <input id="search_query" type="text" class="input" value="" placeholder="Find yours.." name="search">
+            <button class="btn">Search
+                <i id="btn_search" class="is-clickable fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <hr>
+
+    <div> {{! search result }}
+        {{#each spotresult}}
+        <a href="/result/{{this._id}}">{{this.name}}</a>
+        {{/each}}
+    </div>
+
+
     <h5>most viewed |</h5>
     <h5> random</h5>
 
@@ -31,21 +39,19 @@
 </section>
 
 
-{{! google map API }}
-{{!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAwayBDtUp9H89-LbFDO1RlXOeBKaRRZEk
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-</iframe> --}}
 
-{{! google map test area}}
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
 
-<!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
+{{! Google map }}
+<style>
+    #map {
+        height: 400px;
+        width: 70%;
+        border-radius: 12px;
+        box-shadow: 1px 4px 11px gray;
+    }
+</style>
+<div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
+
 
 {{! Sign in }}
 <section>
@@ -73,19 +79,10 @@
 </section>
 
 
-{{! result }}
-<section>
-    <div>
-        <h3></h3>
-        <p></p>
-    </div>
-
-    {{! google map here }}
-
-    <div>
-        {{! comment here }}
-        <h4></h4> {{! pseudo }}
-        <p></p> {{! comment }}
-    </div>
+<div>
+    {{! comment here }}
+    <h4></h4> {{! pseudo }}
+    <p></p> {{! comment }}
+</div>
 
 </section>
