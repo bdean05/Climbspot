@@ -11,22 +11,17 @@ router.get("/signin", (req, res, next) => {
 });
 
 router.post("/signin", (req, res) => {
-  const {
-    email,
-    password
-  } = req.body;
-  user
-    .foundOne({
-      email: email
-    })
-    .then(foundUser => {
-      if (!foundUser) {
+  const { username, password } = req.body;
+  User.findOne({
+    username: username
+  })
+    .then(findUser => {
+      if (!findUser) {
         errorMessage: "Error, invalid credentials!";
         res.redirect("/auth/signin");
-      }
-      else {
-        if (bcrypt.compareSync(password, foundUser.password)) {
-          req.session.currentUser = foundUser;
+      } else {
+        if (bcrypt.compareSync(password, findUser.password)) {
+          req.session.currentUser = findUser;
           res.redirect("/");
         } else {
           errorMessage: "Error, invalid credentials!";
@@ -44,14 +39,11 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res) => {
-  const {
-    username,
-    password
-  } = req.body;
+  const { username, password } = req.body;
   console.log(req.body);
   User.findOne({
-      username: username
-    })
+    username: username
+  })
     .then(user => {
       if (user) {
         res.render("signup", {

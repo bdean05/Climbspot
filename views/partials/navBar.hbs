@@ -1,19 +1,18 @@
-<section>
+<nav class="nav-bar">
+    {{!-- {{! main bar}} --}}
+    <ul class="nav-list">
+        <li><a class="nav-link" href="/"></a> Home</li>
+        <li><a class="nav-link" href="/blog"></a>Blog</li>
+        <li><a class="nav-link" href="/about"></a>About</li>
 
-    {{! main bar}}
-    <ul>
-        <li>Home</li>
-        <li>Blog</li>
-        <li>About</li>
-        <li>Favorites</li>
+        {{!-- {{! login bar}} --}}
+        {{#if isLoggedIn}}
+        <li><a class="nav-link" href="/"></a>Favorites</li>
+        <li>{{username}}</li>
+        <li><a class="nav-link" href="/logout"></a>Log out</li>
+        {{else}}
+        <li><a class="nav-link" href="/signin"></a>Sign in | </li>
+        {{/if}}
     </ul>
 
-
-    {{! login bar}}
-    <ul>
-        <li>Sign in | </li>
-        <li>Sing up</li>
-        <li>Log out</li>
-    </ul>
-
-</section>
+</nav>

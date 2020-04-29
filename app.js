@@ -6,8 +6,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const hbs = require("hbs");
-const mongoose = require("mongoose")
-
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -21,7 +20,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: false
   })
 );
 
@@ -30,12 +29,12 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
-  .then((self) => {
+  .then(self => {
     console.log("Connected to ${self.connection.name}");
   })
-  .catch((err) => {
+  .catch(err => {
     console.log(err);
   });
 
@@ -48,15 +47,15 @@ app.use("/", indexRouter);
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -65,5 +64,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// app.listen(process.env.PORT, () => {
+//   console.log(`Listening on http://localhost:${process.env.PORT}`);
+// });
 
 module.exports = app;
