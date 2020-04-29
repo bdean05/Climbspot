@@ -10,14 +10,14 @@ const Spot = require('../models/Spot')
 //   });
 // });
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   console.log(req.query)
   const inputQuery = req.query.search;
 
   Spot.find({
       name: {
-        $regex: inputQuery,
-        $options: 'i'
+        $regex: inputQuery || "default",
+        $options: 'i',
       }
     })
     .then((dbResult) => {
