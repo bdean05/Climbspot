@@ -167,7 +167,7 @@ a:active {
 }
 
 .founder-text {
-  text-align: justify; 
+  text-align: justify;
   padding: 10px;
 }
 
@@ -197,47 +197,52 @@ a:active {
   background: linear-gradient(#427A59, #035F87);
   background-color: #427A59;
   margin-bottom: -100px;
- ,padding: 35px;
+  padding: 35px;
   bottom: 0;
 }
 
- .create-image {
-    background-color: white;
-    height: 200px;
-    width: 100%;
-    background-position: top;
-    background-size: cover;
-    margin-top: -50px;
-  }
+.create-image {
+  background-color: white;
+  height: 200px;
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+  margin-top: -50px;
+}
 
+.create-image img {
 
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
 
-.home-result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  border: 2px solid #737373;
-  padding: 10px;
-  margin: 5px 25px 5px 25px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  background-color: white;
-  font-size: 17px;
-}
+  .home-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    border: 2px solid #737373;
+    padding: 10px;
+    margin: 5px 25px 5px 25px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 17px;
+  }
 
-.about-founder {
-  display: flex;
-  align-items: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  font-size: 16px;
-}
+  .about-founder {
+    display: flex;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    font-size: 16px;
+  }
 
 
 
