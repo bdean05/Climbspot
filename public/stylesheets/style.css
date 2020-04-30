@@ -12,7 +12,7 @@ body {
 }
 
 .index-body {
-  height: 100vh;
+  height: 80vh;
   background-image: url('../images/index-background.jpg');
   background-size: cover;
   background-position: center;
@@ -34,8 +34,8 @@ a:active {
 
 
 .search-box {
-  background-color: #427A59;
-  border: 10px solid #427A59;
+  background: linear-gradient(#427A59, #035F87);
+  border: 10px solid linear-gradient(#427A59, #035F87);;
   display: flex;
   justify-content: center;
   min-width: 100px;
@@ -49,6 +49,7 @@ a:active {
   -webkit-box-shadow: 0px 5px 5px 0px #999;
   box-shadow: 0px 5px 5px 0px #999;
   margin: 35px 0px;
+  padding: 15px;
 }
 
 .input {
@@ -82,13 +83,13 @@ a:active {
 .btn-search {
   background-image: url("/images/search_icon.png");
   background-size: 20px 20px;
-  background-color: #427A59;
+  background-color: #246d6f;
   padding: 10px;
   outline: none;
   border: none;
   position: absolute;
   margin: O;
-  bottom: 0%;
+  bottom: 30%;
 }
 
 .home-result {
@@ -109,6 +110,7 @@ a:active {
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
+  background-color: white;
 }
 
 .list-result {
@@ -127,4 +129,40 @@ a:active {
   background-image: linear-gradient(180deg, #ffffff 0%, #f0f2f5 74%);
   list: none;
   padding: 20px 0px 0px 0px;
+}
+.about-text {
+  width: 80%; 
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 65px;
+  line-height: 26px;
+}
+
+.about-founder {
+  padding: 10px; 
+  width: 20%; 
+  display: inline-block; 
+  top: 0px; 
+  vertical-align: top;
+}
+
+.message-form {
+  background-color: #CCCCCC;
+  margin-bottom: 50px;
+}
+
+.input-form {
+  outline: red;
+  box-sizing: border-box;
+}
+
+.about-image {
+  background-image: url("/images/about-image.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  margin-top: -80px;
+  box-shadow: inset 0px -25px 50px black;
 }

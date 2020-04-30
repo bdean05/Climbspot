@@ -12,6 +12,7 @@
     background-image: url('../images/sign-in.jpg');
     background-size: cover;
     background-position: center;
+    margin-top: -4px;
 }
 
 .sign-background2 {
@@ -20,6 +21,7 @@
     background-image: url('../images/sign-up.jpg');
     background-size: cover;
     background-position: center;
+    margin-top: -4px;
 }
 
 .formCard {
