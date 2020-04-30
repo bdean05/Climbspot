@@ -87,16 +87,7 @@ router.post("/spots/edit/:id", (req, res) => {
     req.body.description === "" ||
     req.body.category === ""
   ) {
-    Spot.findById(req.params.id)
-      .then(dbRes => {
-        res.render("spots/editSpot.hbs", {
-          spot: dbResult,
-          error: "You have to enter all the fields..."
-        });
-      })
-      .catch(dbErr => {
-        console.log(dbErr);
-      });
+    res.redirect(`/spots/edit/${req.params.id}`);
   } else {
     Spot.findByIdAndUpdate(req.params.id, req.body, {
         new: true
