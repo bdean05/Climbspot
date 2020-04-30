@@ -1,14 +1,6 @@
 var express = require("express");
-var router = express.Router();
+var router = new express.Router();
 const Spot = require("../models/Spot");
-
-// /* GET home page. */
-// router.get('/', function (req, res, next) {
-//   res.render('index', {
-//     title: 'Express',
-//     scripts: ["manySpotsMap.js"]
-//   });
-// });
 
 router.get("/", (req, res) => {
   console.log(req.query);
