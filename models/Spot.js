@@ -13,15 +13,12 @@ const spotSchema = new Schema({
     {
       username: {
         type: Schema.Types.ObjectId,
-        ref: "User",
+        ref: "User"
       },
-      content: String,
-    },
+      content: String
+    }
   ],
-  category: {
-    type: String,
-    enum: ["", "", ""],
-  },
+  category: String
 });
 
 const Spot = mongoose.model("Spot", spotSchema);
