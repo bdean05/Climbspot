@@ -11,12 +11,12 @@ body {
   text-align: center;
 }
 
-.index-body {
+/* .index-body {
   height: 100vh;
   background-image: url('../images/index-background.jpg');
   background-size: cover;
   background-position: center;
-}
+} */
 
 a {
   color: black;
