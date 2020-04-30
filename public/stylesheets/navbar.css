@@ -1,3 +1,27 @@
+.nav-create-manage {
+  height: 25px;
+  background: linear-gradient(#427A59, #035F87);
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  -moz-box-shadow: 0px 0px 5px 0px #000;
+  -webkit-box-shadow: 0px 0px 5px 0px #000;
+  left: 0px;
+  right: 0px;
+}
+
+
+.create-manage-text {
+  color: white; 
+  text-align: center; 
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+
 .nav-bar {
   height: 60px;
   background-color: white;
@@ -13,12 +37,12 @@
   box-shadow: 0px 0px 5px 0px #000;
   left: 0px;
   right: 0px;
-  /*margin: auto;
-    flex-direction: row;
+  margin-top: 25px;
+  /*    flex-direction: row;
     justify-content: center;
     text-align: center;*/
-
 }
+
 
 
 #nav-list {
@@ -36,6 +60,11 @@
     justify-content: center;
     */
 }
+
+
+ .nav-link {
+    padding: 0px 20px 0px 25px;
+  }
 
 
 .menu-header {
@@ -60,6 +89,8 @@
   align-items: center;
   justify-content: flex-end;
   width: 30%;
+  border-right: 10px solid rgba(255, 255, 255, .7);
+  padding: 12px 0px 12px 0px;
 
 }
 
@@ -84,7 +115,7 @@
 }
 
 .home-logo {
-  padding-top: 105px;
+  padding-top: 120px;
   text-align: center;
   color: white;
   font-size: 65px;
@@ -97,7 +128,7 @@
     display: flex;
     align-items: initial;
     display: inline-block;
-    margin-top: -1px;
+    margin-top: 35px;
   }
 
   #nav-list {
@@ -107,18 +138,18 @@
   }
 
   .sign-up-in {
-    margin-top: 25px;
+    margin-top: 2px;
     font-size: 17px;
     float: right;
-    width: 100%;
+    width: 50%;
     text-align: right;
-    margin-right: -25px;
   }
 
   .nav-link {
     background-color: rgba(255, 255, 255, .7);
-    border: 10px solid rgba(255, 255, 255, .0);
-    margin-left: 15px;
+    padding: 12px 0px 12px 10px;
+    text-align: right;
+    text-decoration: underline;
   }
 
   .nav-item {
@@ -135,3 +166,32 @@
     background-size: cover;
     margin-top: -50px;
   }
+
+.nav-create-manage {
+  height: 35px;
+  background: linear-gradient(#427A59, #035F87);
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  -moz-box-shadow: 0px 0px 5px 0px #000;
+  -webkit-box-shadow: 0px 0px 5px 0px #000;
+  left: 0px;
+  right: 0px;
+  font-size: 16px;
+}
+
+
+.create-manage-text {
+  color: white; 
+  text-align: center; 
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+
+
+
+}
