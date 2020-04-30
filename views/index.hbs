@@ -1,59 +1,66 @@
-{{! with title and background image }}
-<header class="home-image">
-    <h1 class="home-logo">ClimbSpot.</h1>
-{{! <div></div><-- background here }}
-</header>
+<div class="index-body">{{! with title and background image }}
+    <header class="home-image">
+        <h1 class="home-logo">ClimbSpot.</h1>
+        {{! <div></div><-- background here }}
+    </header>
 
 
-{{! search - most viewed - random }}
-<section>
-    <hr>
-    <form class="form" id="search_bar" method='GET' action="/">
-        <div class="row">
-            <input id="search_query" type="text" class="input" value="" placeholder="Find yours.." name="search">
-            <button class="btn">Search
+    {{! search - most viewed - random }}
+    <section>
+        {{! <hr> }}
+        <form class="form" id="search_bar" method='GET' action="/">
+            <div class="search-box">
+                <input id="search_query" type="text" class="input" value="" placeholder="Find yours spot..."
+                    name="search">
+                <button class="btn-search"><i class="is-clickable fas fa-search"></i></button>
+                {{! <button class="btn">Search
                 <i id="btn_search" class="is-clickable fas fa-search"></i>
-            </button>
+            </button> }}
+            </div>
+        </form>
+        {{! <hr> }}
+
+        <div class="list-result"> {{! search result }}
+            {{#each spotresult}}
+            <p class="home-result"><a href="/result/{{this._id}}">{{this.name}}</a></p>
+            {{/each}}
         </div>
-    </form>
-    <hr>
-
-    <div> {{! search result }}
-        {{#each spotresult}}
-        <a href="/result/{{this._id}}">{{this.name}}</a>
-        {{/each}}
-    </div>
-
-
-    <h5>most viewed |</h5>
-    <h5> random</h5>
-
-    <div>
-        {{! most viewd grid }}
-    </div>
-
-    <div>
-        {{! random grid }}
-    </div>
-
-</section>
 
 
 
 
-{{! Google map }}
-<style>
-    #map {
-        height: 400px;
-        width: 70%;
-        border-radius: 12px;
-        box-shadow: 1px 4px 11px gray;
-    }
-</style>
-<div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
+        <div class="selection-grid">
+            <a href="/">most viewed</a>
+            <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+            <a href="/">random</a>
+            {{! most viewed grid }}
+        </div>
+
+        <div>
+            {{! random grid }}
+        </div>
+
+    </section>
 
 
-{{! Sign in }}
+
+
+    {{! Google map }}
+    <style>
+        #map {
+            height: 400px;
+            width: 70%;
+            border-radius: 0px 0px 12px 12px;
+            box-shadow: 1px 6px 11px gray;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 150px;
+        }
+    </style>
+    <div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
+
+
+    {{!-- {{! Sign in }}
 <section>
     <div>
         <h3><a href="/auth/signin">Sign in</a> </h3>
@@ -76,13 +83,14 @@
             <buton>Submit</buton>
         </form>
     </div>
-</section>
+</section> --}}
 
 
-<div>
-    {{! comment here }}
-    <h4></h4> {{! pseudo }}
-    <p></p> {{! comment }}
+    <div>
+        {{! comment here }}
+        <h4></h4> {{! pseudo }}
+        <p></p> {{! comment }}
+    </div>
+
+    </section>
 </div>
-
-</section>
