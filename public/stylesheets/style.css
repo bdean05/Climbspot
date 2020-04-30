@@ -103,6 +103,7 @@ a:active {
 .home-result {
   text-decoration: underline;
   text-align: center;
+  display: block;
 
 }
 
@@ -164,6 +165,11 @@ a:active {
   vertical-align: top;
 }
 
+.founder-text {
+  text-align: justify; 
+  padding: 10px;
+}
+
 .message-form {
   background-color: #CCCCCC;
   padding: 20px;
@@ -184,4 +190,46 @@ a:active {
   width: 100%;
   margin-top: -80px;
   box-shadow: inset 0px -25px 50px black;
+}
+
+.footer {
+  background: linear-gradient(#427A59, #035F87);
+  background-color: #427A59;
+  margin-bottom: -100px;
+ ,padding: 35px;
+  bottom: 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+.home-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border: 2px solid #737373;
+  padding: 10px;
+  margin: 5px 25px 5px 25px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 17px;
+}
+
+.about-founder {
+  display: flex;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  font-size: 16px;
+}
+
+
+
+
+
+
 }
