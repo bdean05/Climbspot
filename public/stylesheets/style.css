@@ -13,9 +13,10 @@ body {
 
 .index-body {
   height: 80vh;
-  background-image: url('../images/index-background.jpg');
+  background-image: url('../images/index-background2.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
+  background-repeat: repeat;
 }
 
 a {
@@ -228,7 +229,15 @@ a:active {
 }
 
 
-
+.edit-image {
+  background-image: url("/images/about-image.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  margin-top: -80px;
+  box-shadow: inset 0px -25px 50px black;
+}
 
 
 
