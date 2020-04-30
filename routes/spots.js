@@ -25,7 +25,7 @@ router.post("/spots", (req, res) => {
     .then(dbRes => {
       Spot.find({})
         .then(dbRes => {
-          res.render("/views/index.hbs", {
+          res.render("google.fr", {
             spots: dbRes
             // css: ["spots.css],
           });
