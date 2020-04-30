@@ -7,7 +7,8 @@ const blogSchema = new Schema({
     spot: {
         type: Schema.Types.ObjectId,
         ref: "Spot"
-    }
+    },
+    image: String
 })
 
 const Blog = mongoose.model("Blog", blogSchema)

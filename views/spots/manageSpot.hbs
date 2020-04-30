@@ -1,4 +1,5 @@
-<div class="create-image" style="margin-top: 120px;">
+<div class="create-image">
+<div class="white-frame">
 <table class="table">
     <thead>
         <th>Name </th>
@@ -22,10 +23,11 @@
             <td><img src="{{this.image}}" /></td>
             <td>{{this.description}}</td>
             <td>{{this.category}}</td>
-            <td> <a href="/spots/edit/{{this._id}}">Edit</a>/ <a class="link" r
-                    href="/spots/delete/{{this._id}}">Delete</a></td>
+            <td> <a href="/spots/edit/{{this._id}}"><span style="text-decoration: underline;">Edit</span></a>/ <a class="link" r
+                    href="/spots/delete/{{this._id}}"><span style="text-decoration: underline;">Delete</span></a></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
+</div>
 </div>

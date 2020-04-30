@@ -4,11 +4,22 @@
 
 
     <section>
+
+
+
+           
+
+
         <div>
       this is an article
+      {{#each articles}}
+            <p>{{this.title}}</p>
+            <p>{{this.text}}</p>
+            <p>{{this.image}}</p>
+            {{/each}}
         </div>
 
-        <div class="message-form">
+{{!--    <div class="message-form">
             <h1>Contact us!</h1>
             </br>
             <form action="mailto:benjamin_h_dean@yahoo.com" method="post" enctype="text/plain">
@@ -20,7 +31,6 @@
                 <input class="input-form" type="text" name="message" size="40"><br><br>
                 <input type="submit" value="Send" class="search-box">
             </form>
-        </div>
-        <br>
+        </div> --}}       
 
     </section>
