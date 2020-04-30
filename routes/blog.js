@@ -6,3 +6,5 @@ router.get("/blog", (req, res, next) => {
         errorMessage: "error"
     });
 });
+
+module.exports = router
