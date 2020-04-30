@@ -20,14 +20,13 @@ router.get("/spots/create", (req, res) => {
   });
 });
 
-router.post("/spots", (req, res) => {
+router.post("/spots/create", (req, res) => {
   Spot.create(req.body)
     .then(dbRes => {
       Spot.find({})
         .then(dbRes => {
-          res.render("google.fr", {
+          res.render("../index", {
             spots: dbRes
-            // css: ["spots.css],
           });
         })
         .catch(err => {
