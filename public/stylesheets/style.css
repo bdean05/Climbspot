@@ -12,11 +12,11 @@ body {
 }
 
 .index-body {
-  height: 80vh;
+  height: 120%;
   background-image: url('../images/index-background2.jpg');
   background-size: cover;
-  background-position: center bottom;
   background-repeat: repeat;
+  background-position: top;
 }
 
 a {
@@ -201,6 +201,17 @@ a:active {
   bottom: 0;
 }
 
+ .create-image {
+    background-color: white;
+    height: 200px;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    margin-top: -50px;
+  }
+
+
+
 @media only screen and (min-width: 320px) and (max-width: 768px) {
 
 .home-result {
@@ -229,15 +240,7 @@ a:active {
 }
 
 
-.edit-image {
-  background-image: url("/images/about-image.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 250px;
-  width: 100%;
-  margin-top: -80px;
-  box-shadow: inset 0px -25px 50px black;
-}
+
 
 
 
