@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  favorites: [{
-    type: Schema.Types.ObjectId,
-    ref: "Spot"
-  }],
   role: {
     enum: ["admin", "user"],
     type: String,

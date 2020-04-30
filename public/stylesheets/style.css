@@ -12,10 +12,11 @@ body {
 }
 
 .index-body {
-  height: 80vh;
-  background-image: url('../images/index-background.jpg');
+  height: 120%;
+  background-image: url('../images/index-background2.jpg');
   background-size: cover;
-  background-position: center;
+  background-repeat: repeat;
+  background-position: top;
 }
 
 a {
@@ -199,6 +200,17 @@ a:active {
  ,padding: 35px;
   bottom: 0;
 }
+
+ .create-image {
+    background-color: white;
+    height: 200px;
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    margin-top: -50px;
+  }
+
+
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
 
