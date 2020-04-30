@@ -17,6 +17,7 @@ router.get("/blog", (req, res, next) => {
     });
 });
 
+<<<<<<< HEAD
 
 
 router.get("/api/blog", (req, res) => {
@@ -41,3 +42,6 @@ router.get("/api/blog/:id", (req, res) => {
 
 
 module.exports = router
+=======
+module.exports = router
+>>>>>>> 7d090a4b83fcff993db87d21996c3411c8cf8502
