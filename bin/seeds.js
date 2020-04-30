@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 const Spot = require("../models/Spot");
+const Article = require("../models/Blog");
 
 const spots = [
   {
@@ -196,6 +197,35 @@ const spots = [
     category: "2b, 8c"
   }
 ];
+
+
+
+const articles = [{
+    title: "toto",
+    text: "tataa",
+    image: "public/images/olivier.jpg"
+  }
+];
+
+
+
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  })
+  .then(self => {
+    console.log(`Connected to ${self.connection.name}`);
+    Article.create(articles)
+      .then(createdarticles => console.log(createdarticles))
+      .catch(err => console.log(err));
+  })
+  .catch(err => {
+    console.log(err);
+  });
+
+
 
 mongoose
   .connect(process.env.MONGODB_URI, {
