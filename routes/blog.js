@@ -1,8 +1,10 @@
 const express = require("express");
 const router = new express.Router();
 
-router.get("/blog", (req, res) => {
-  res.render("blog");
+router.get("/blog", (req, res, next) => {
+    res.render("blog", {
+        errorMessage: "error"
+    });
 });
 
-module.exports = router;
+module.exports = router

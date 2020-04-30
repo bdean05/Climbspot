@@ -6,13 +6,13 @@ const requireAdmin = require("../middlewares/requireAdmin");
 const mongoose = require("mongoose");
 
 //Read
-router.get("/spots", (req, res) => {
-  Spot.find({})
-    .then(dbRes => {})
-    .catch(err => {
-      console.log("err");
-    });
-});
+// router.get("/spots", (req, res) => {
+//   Spot.find({})
+//     .then(dbRes => {})
+//     .catch(err => {
+//       console.log("err");
+//     });
+// });
 
 router.get("/spots/create", (req, res) => {
   res.render("spots/createSpot.hbs", {
@@ -25,7 +25,7 @@ router.post("/spots/create", (req, res) => {
     .then(dbRes => {
       Spot.find({})
         .then(dbRes => {
-          res.render("../index", {
+          res.render("./", {
             spots: dbRes
           });
         })
@@ -97,7 +97,9 @@ router.post("/spots/edit/:id", (req, res) => {
         console.log(dbErr);
       });
   } else {
-    Spot.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    Spot.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+      })
       .then(dbResult => {
         res.redirect("/spots/manage");
       })
