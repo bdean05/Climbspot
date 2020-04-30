@@ -29,12 +29,12 @@ app.use(
     store: new MongoStore({
       mongooseConnection: mongoose.connection
     }),
-    secret: "ilksdfsfsfsflkftressecret",
+    secret: process.env.SESSION_SECRET,
     cookie: {
       maxAge: 60000
     },
-    saveUninitialized: false,
-    resave: false
+    saveUninitialized: true,
+    resave: true
   })
 );
 
