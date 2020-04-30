@@ -1,15 +1,52 @@
-<h3 id="showOnMap" data-latitude={{searchresultdb.latitude}} data-longitude={{searchresultdb.longitude}}>
-    {{searchresultdb.name}}
-</h3>
+{{! Google map default params /!\ do not delete}}
 
-{{! Google map }}
+
+<div id="showOnMap" data-latitude={{searchresultdb.latitude}} data-longitude={{searchresultdb.longitude}}>
+</div>
+
 <style>
     #map {
-        height: 400px;
-        width: 70%;
-        border-radius: 12px;
-        box-shadow: 1px 4px 11px gray;
+        height: 150px;
+        width: 100%;
+        border-radius: 0px 0px 0px 15px;
+        bottom: 0px;
+        box-shadow: 0px -20px 20px -15px black;
     }
 </style>
 
-<div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
+
+{{! ------------------------------------------ }}
+
+<img src="{{searchresultdb.image}}" class="result-background"></img>
+
+{{!-- <img class="result-background" src="{{searchresultdb.image}}"> --}}
+
+<section class="result-card">
+
+    <div class="pix-n-map">
+        <div style="background-image: url('{{searchresultdb.image}}')" class="pix-n-detail">
+            {{!-- <img src="{{searchresultdb.image}}" alt=""> --}}
+            <div class="speech">
+                <h2>{{searchresultdb.name}}</h2>
+                <p>{{searchresultdb.description}}</p>
+            </div>
+        </div>
+        <div id="map" class="result-map"></div>
+    </div>
+
+    </div>
+
+    <div class="comment-n-post">
+        <div class="comment-section">
+            {{#each searchresultdb}}
+            <h5>{{searchresultdb.comments.username}}</h5>
+            <p>{{searchresultdb.comments.content}}</p>
+            {{/each}}
+        </div>
+        <div class="comment-panel">
+            <div class="comment-fav"></div>
+            <a href="" class="comment-btn">Post a comment +</a>
+        </div>
+    </div>
+
+</section>
