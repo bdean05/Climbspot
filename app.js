@@ -11,7 +11,6 @@ const mongoose = require("mongoose");
 const app = express();
 
 // view engine setup
-
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 hbs.registerPartials(__dirname + "/views/partials");
@@ -39,29 +38,26 @@ app.use(
   })
 );
 
-//QUESTION!!!
-
 // middleware custom
 
 function checklogStatus(req, res, next) {
-  res.locals.user = res.session.currentUser ? req.session.currentUser : null;
+  res.locals.user = req.session.currentUser ? req.session.currentUser : null;
   res.locals.isLoggedIn = Boolean(req.session.currentUser);
   next();
 }
 
-// app.use(checklogStatus);
+app.use(checklogStatus);
 
-//QUESTION !!!
-
-app.use((req, res, next) => {
-  if (req.session.currentUser) {
-    res.locals.user = req.session.currentUser;
-    res.locals.isLoggedIn = true;
-  } else {
-    res.locals.isLoggedIn = false;
-  }
-  next();
-});
+//middleware custom same as function checklogStatus
+// app.use((req, res, next) => {
+//   if (req.session.currentUser) {
+//     res.locals.user = req.session.currentUser;
+//     res.locals.isLoggedIn = true;
+//   } else {
+//     res.locals.isLoggedIn = false;
+//   }
+//   next();
+// });
 
 // connect to database
 mongoose
