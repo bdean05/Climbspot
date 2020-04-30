@@ -83,6 +83,7 @@ app.use("/auth", require("./routes/auth"));
 app.use("/", indexRouter);
 app.use("/", require("./routes/spots"));
 app.use("/", require("./routes/result"));
+app.use("/", require("./routes/about"));
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler

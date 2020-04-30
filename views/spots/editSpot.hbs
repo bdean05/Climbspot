@@ -1,0 +1,41 @@
+<form class="form" action="/spots/edit/{{spot._id}}" method="POST">
+    <h2 class="title">Edit the spot "{{spot.name}}"</h2>
+    <div class="form-group">
+        <label class="label" for="name">Name</label>
+        <input class="input" id="name" type="text" name="name" required="true" value=" {{spot.name}} ">
+    </div>
+    <div class="form-group">
+        <label class="label" for="ref">Ref</label>
+        <input class="input" id="ref" type="text" name="ref" required="true" value=" {{spot.ref}} ">
+    </div>
+    <div class="form-group">
+        <label class="label" for="address">Address</label>
+        <input class="input" id="address" type="text" name="address" required="true" value=" {{spot.address}}">
+    </div>
+    <div class="form-group">
+        <label class="label" for="latitude">Lattitude</label>
+        <input class="input" id="latitude" type="number" name="latitude" required="true" value=" {{spot.lattitude}} ">
+    </div>
+    <div class="form-group">
+        <label class="label" for="longitude">Longitude</label>
+        <input class="input" id="longitude" type="number" name="longitude" required="true" value=" {{spot.longitude}} ">
+    </div>
+    <div class="form-group">
+        <label class="label" for="image">Image</label>
+        <input class="input" id="image" type="url" name="image" value="{{spot.image}} ">
+    </div>
+    <div class="form-group">
+        <label class="label" for="description">Description</label>
+        <input class="input" id="description" type="text" name="description" value=" {{spot.description}} ">
+    </div>
+    <div class="form-group">
+        <label class="label" for="category">Category</label>
+        <input class="input" id="category" type="text" name="category" value=" {{spot.category}} ">
+    </div>
+
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+
+    <button class="btn">Submit</button>
+</form>
