@@ -39,9 +39,9 @@
 
     <div class="comment-n-post">
         <div class="comment-section">
-            {{#each searchresultdb}}
-            <h5>{{searchresultdb.comments.username}}</h5>
-            <p>{{searchresultdb.comments.content}}</p>
+            {{#each searchresultdb.comments}}
+            <h5>{{this.username.username}}</h5>
+            <p>{{this.content}}</p>
             {{/each}}
         </div>
         <a href="/result/add-comment/{{searchresultdb._id}}" class="comment-btn">+ add a comment</a>

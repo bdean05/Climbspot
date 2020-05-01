@@ -12,6 +12,7 @@
 
 .commentCard {
     background-color: white;
+    border-radius: 15px;
     color: white;
     font-weight: bold;
     border: 3px solid #f1f1f1;
@@ -28,6 +29,10 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+.comment-form h2 {
+    border: 1px dotted red;
 }
 
 .comment-input1 {

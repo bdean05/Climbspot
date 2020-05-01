@@ -4,7 +4,9 @@ const Spot = require("../models/Spot");
 
 router.get('/result/:id', (req, res, next) => {
     Spot.findById(req.params.id)
+    .populate({path: "comments.username"})
         .then(searchresultdb => {
+            console.log(searchresultdb)
             res.render('result', {
                 searchresultdb,
                 scripts: ["oneSpotMap.js"]
@@ -24,22 +26,25 @@ router.get('/result/add-comment/:id', (req, res, next) => {
 })
 
 
-// router.post("/add-comment/:id", (req, res, next) => {
-//     const {
-//         username,
-//         content
-//     } = req.body;
+router.post("/result/add-comment/:id", (req, res, next) => {
+    console.log('hello')
 
-//     Spot
-//         .findByIdAndUpdate(req.params.id, {
-//             comments.username : username,
-//             comments.content : content,
-//         })
-//         .then(() => {
-//             // req.flash("success", "artist successfully updated");
-//             res.redirect("result")
-//         })
-//         .catch(next);
-// });
+    const newComment = {
+        username: req.session.currentUser._id,
+        content: req.body.content
+    }
+
+    Spot
+        .findByIdAndUpdate(req.params.id, {
+            $push: {
+                comments: newComment
+            }
+        })
+        .then(() => {
+            // req.flash("success", "artist successfully updated");
+            res.redirect("/result/" + req.params.id)
+        })
+
+});
 
 module.exports = router;
