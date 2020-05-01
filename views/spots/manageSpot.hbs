@@ -1,6 +1,36 @@
 <div class="create-image">
-<div class="white-frame">
-<table class="table">
+    <div class="white-frame">
+
+        {{!-- <thead class="nav-manage">
+            <th>Name :</th>
+            <th>Ref</th>
+            <th>Adress</th>
+            <th>Lattitude</th>
+            <th>Longitude</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Category</th>
+        </thead>
+        <hr> --}}
+        <div>
+            {{#each spots}}
+            <p>Name : {{this.name}}</p>
+            <p>Ref : {{this.ref}}</p>
+            <p>Adress :{{this.adress}}</p>
+            <p>Lattitude : {{this.latitude}}</p>
+            <p>Longitude : {{this.longitude}}</p>
+            <p>Description : {{this.description}}</p>
+            <p>Category:{{this.category}}</p>
+            <p class="edit-image"><img src="{{this.image}}" style="width: 75%;"></p>
+            <a href="/spots/edit/{{this._id}}"><span style="text-decoration: underline;">Edit</span></a>/ <a
+                class="link" r href="/spots/delete/{{this._id}}"><span
+                    style="text-decoration: underline;">Delete</span></a></td>
+            <hr>
+            {{/each}}
+
+        </div>
+
+        {{!-- <table class="table">
     <thead>
         <th>Name </th>
         <th>Ref</th>
@@ -28,6 +58,6 @@
         </tr>
         {{/each}}
     </tbody>
-</table>
-</div>
+</table> --}}
+    </div>
 </div>
