@@ -42,5 +42,3 @@ router.get("/api/blog/:id", (req, res) => {
 
 
 module.exports = router
-
-module.exports = router
