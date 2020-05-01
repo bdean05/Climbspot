@@ -227,6 +227,10 @@ a:active {
   width: 100px;
   border: 1px, solid, black
 }
+.nav-manage{
+  display: flex;
+  justify-content: space-around;
+}
 
 .create-image img {
   height: 100px;
