@@ -1,0 +1,43 @@
+.commentBackground {
+    /* position: relative; */
+    filter: blur(5px) grayscale(100%) brightness(60%);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    width: 100vw;
+    height: 100vh;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.commentCard {
+    background-color: white;
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-top: 20px;
+    width: 340px;
+    height: 460px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.comment-input1 {
+    width: 150px;
+    text-align: center;
+}
+
+.comment-input2 {
+    width: 330px;
+    height: 320px;
+    overflow: auto;
+    padding: 10px;
+}

@@ -1,0 +1,22 @@
+<img src="{{searchresultdb_edit.image}}" class="commentBackground" alt="">
+
+<section class="commentCard">
+
+
+
+    <form autocomplete="off" class="comment-form" method="POST"
+        action="/result/add-comment/{{searchresultdb_edit._id}}">
+        <h2 class="sign-title">Add a comment</h2>
+        <div>
+            <input class="comment-input1" id="comment-pseudo" type="text" name="username" placeholder="Enter a pseudo"
+                required="true" value="toto">
+        </div>
+
+        <div>
+            <textarea class="comment-input2" id="comment-text" type="text" name="content"
+                placeholder="write your comment just right here" required="true" value="some comment"></textarea>
+        </div>
+
+        <button class="post-comment-btn">Post your comment</button>
+    </form>
+</section>
