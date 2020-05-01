@@ -1,35 +1,60 @@
-<div class="edit-image">
+<div class="create-image">
     <div class="white-frame">
-        <table class="table">
-            <thead>
-                <th>Name </th>
-                <th>Ref</th>
-                <th>Adress</th>
-                <th>Lattitude</th>
-                <th>Longitude</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Category</th>
-            </thead>
 
-            <tbody class="description">
+        <thead>
+            <th>Name </th>
+            <th>Ref</th>
+            <th>Adress</th>
+            <th>Lattitude</th>
+            <th>Longitude</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Category</th>
+        </thead>
 
-                {{#each spots}}
-                <tr>
-                    <td>{{this.name}}</td>
-                    <td>{{this.ref}}</td>
-                    <td>{{this.adress}}</td>
-                    <td>{{this.latitude}}</td>
-                    <td>{{this.longitude}}</td>
-                    <td><img src="{{this.image}}" /></td>
-                    <td>{{this.description}}</td>
-                    <td>{{this.category}}</td>
-                    <td> <a href="/spots/edit/{{this._id}}"><span style="text-decoration: underline;">Edit</span></a>/
-                        <a class="link" r href="/spots/delete/{{this._id}}"><span
-                                style="text-decoration: underline;">Delete</span></a></td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
+        <div>
+            {{#each spots}}
+            <p>{{this.name}}</p>
+            <p>{{this.ref}}</p>
+            <p>{{this.adress}}</p>
+            <p>{{this.latitude}}</p>
+            <p>{{this.longitude}}</p>
+            <img src="{{this.image}}" style="width: 75%;"></p>
+            <p>{{this.description}}</p>
+            <p>{{this.category}}</p>
+            <a href="/spots/edit/{{this._id}}"><span style="text-decoration: underline;">Edit</span></a>/ <a
+                class="link" r href="/spots/delete/{{this._id}}"><span
+                    style="text-decoration: underline;">Delete</span></a></td>
+            {{/each}}
+        </div>
+        {{!-- <table class="table">
+    <thead>
+        <th>Name </th>
+        <th>Ref</th>
+        <th>Adress</th>
+        <th>Lattitude</th>
+        <th>Longitude</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Category</th>
+    </thead>
+
+    <tbody>
+        {{#each spots}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.ref}}</td>
+            <td>{{this.adress}}</td>
+            <td>{{this.latitude}}</td>
+            <td>{{this.longitude}}</td>
+            <td><img src="{{this.image}}" /></td>
+            <td>{{this.description}}</td>
+            <td>{{this.category}}</td>
+            <td> <a href="/spots/edit/{{this._id}}"><span style="text-decoration: underline;">Edit</span></a>/ <a class="link" r
+                    href="/spots/delete/{{this._id}}"><span style="text-decoration: underline;">Delete</span></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table> --}}
     </div>
 </div>
