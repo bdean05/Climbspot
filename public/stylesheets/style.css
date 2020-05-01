@@ -237,6 +237,24 @@ a:active {
   font-size: 16px;
 }
 
+.chapter-title {
+  font-size: 32px;
+  color: #427A59;
+}
+
+.article-box {
+  height: auto;
+  width: 75%;
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 1px 4px 11px gray;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f0f2f5 74%);
+  padding: 20px 30px 20px 30px;
+  text-align center;
+}
+
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
 
@@ -265,6 +283,19 @@ a:active {
     font-size: 16px;
   }
 
+
+.selection-grid {
+  margin-top: 35px;
+  height: 200px;
+  width: 90%;
+  border-radius: 12px 12px 0px 0px;
+  box-shadow: 1px 4px 11px gray;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f0f2f5 74%);
+  padding: 20px 0px 0px 0px;
+}
 
 
 

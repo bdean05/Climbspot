@@ -5,17 +5,17 @@
 
     <section>
 
+<h1 class="chapter-title">Our blog...<br/><br/></h1>
 
 
            
 
 
-        <div>
-      this is an article
-      {{#each articles}}
-            <p>{{this.title}}</p>
-            <p>{{this.text}}</p>
-            <p>{{this.image}}</p>
+        <div class="article-box">
+            {{#each articles}}
+            <h1>{{this.title}}</h1>
+            <h4>{{this.text}}</h4>
+            <img src="{{this.image}}" style="width: 75%;"></p>
             {{/each}}
         </div>
 
