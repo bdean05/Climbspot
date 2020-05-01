@@ -648,6 +648,7 @@ a:active {
   box-shadow: 1px 3px 8px gray;
   margin-left: 15px;
   margin-right: 15px;
+  margin-bottom: 10px;
   background-color: #ffffff;
   background-image: linear-gradient(180deg, #ffffff 0%, #f0f2f5 74%);
   border-radius: 10px 10px 10px 10px;
