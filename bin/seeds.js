@@ -201,9 +201,10 @@ const spots = [
 
 
 const articles = [{
-    title: "toto",
-    text: "tataa",
-    image: "public/images/olivier.jpg"
+    date: "Mai 1rst, 2020",
+    title: "South of France, in the Drôme",
+    text: "One of the main attraction is the mountain forests in the Drôme province. A mecca for most European boulder climbers, with 30 areas, each having with 50 to 100 routes . It is an incredible paradise for those wanting to explore climbing technics and train for bigger climbs, on a fine grit stone. In this forest a popular hike is the Circuit des 25 bosses (25 hills) providing an overall 1000m ascent. It takes a day to do it.",
+    image: "https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=993&q=80"
   }
 ];
 

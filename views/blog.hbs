@@ -5,19 +5,21 @@
 
     <section>
 
+<h1 class="chapter-title">Our blog...<br/><br/></h1>
 
 
 
 
 
-        <div>
-            this is an article
+        <div class="article-box">
             {{#each articles}}
-            <p>{{this.title}}</p>
-            <p>{{this.text}}</p>
-            <p>{{this.image}}</p>
+            <h4>{{this.date}}</h4>
+            <h1>{{this.title}}</h1>
+            <h4>{{this.text}}</h4>
+            <img src="{{this.image}}" style="width: 75%;"></p>
             {{/each}}
         </div>
+
 
         {{!--    <div class="message-form">
             <h1>Contact us!</h1>
