@@ -21,31 +21,31 @@ router.get("/spots/create", (req, res) => {
 
 router.post("/spots/create", (req, res) => {
   Spot.create(req.body)
-    .then((dbRes) => {
+    .then(dbRes => {
       Spot.find({})
-        .then((dbRes) => {
+        .then(dbRes => {
           res.render("./", {
-            spots: dbRes,
+            spots: dbRes
             // css: ["spots.css],
           });
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 });
 
 router.get("/spots/manage", (req, res) => {
   Spot.find({})
-    .then((dbRes) => {
+    .then(dbRes => {
       res.render("spots/manageSpot.hbs", {
-        spots: dbRes,
+        spots: dbRes
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 });
@@ -53,10 +53,10 @@ router.get("/spots/manage", (req, res) => {
 // Delete
 router.get("/spots/delete/:id", (req, res) => {
   Spot.findByIdAndDelete(req.params.id)
-    .then((dbResult) => {
+    .then(dbResult => {
       res.redirect("/spots/manage");
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 });
@@ -64,12 +64,12 @@ router.get("/spots/delete/:id", (req, res) => {
 //Edit
 router.get("/spots/edit/:id", (req, res) => {
   Spot.findById(req.params.id)
-    .then((dbResult) => {
+    .then(dbResult => {
       res.render("spots/editSpot.hbs", {
-        spot: dbResult,
+        spot: dbResult
       });
     })
-    .catch((dbErr) => {
+    .catch(dbErr => {
       console.log(dbErr);
     });
 });
@@ -82,17 +82,17 @@ router.post("/spots/edit/:id", (req, res) => {
     req.body.longitude === "" ||
     req.body.image === ""
   ) {
-    console.log("capoue")
+    console.log("capoue");
     res.redirect(`/spots/edit/${req.params.id}`);
   } else {
     Spot.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      })
-      .then((dbResult) => {
+      new: true
+    })
+      .then(dbResult => {
         console.log(dbResult);
         res.redirect("/spots/manage");
       })
-      .catch((dbErr) => {
+      .catch(dbErr => {
         console.log(dbErr);
       });
   }

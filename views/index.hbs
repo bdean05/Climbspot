@@ -1,47 +1,47 @@
 <div class="index-body">
-<div>{{! with title and background image }}
-    <header class="home-image">
-        <h1 class="home-logo">ClimbSpot.</h1>
-        {{! <div></div><-- background here }}
-    </header>
+    <div>{{! with title and background image }}
+        <header class="home-image">
+            <h1 class="home-logo">ClimbSpot.</h1>
+            {{! <div></div><-- background here }}
+        </header>
 
 
-    {{! search - most viewed - random }}
-    <section>
-        {{! <hr> }}
-        <form class="form" id="search_bar" method='GET' action="/">
-            <div class="search-box">
-                <input id="search_query" type="text" class="input-search" value="" placeholder="Find your spot..."
-                    name="search">
-                <button class="btn-search"><i class="is-clickable fas fa-search"></i></button>
-                {{! <button class="btn">Search
+        {{! search - most viewed - random }}
+        <section>
+            {{! <hr> }}
+            <form class="form" id="search_bar" method='GET' action="/">
+                <div class="search-box">
+                    <input id="search_query" type="text" class="input-search" value="" placeholder="Find your spot..."
+                        name="search">
+                    <button class="btn-search"><i class="is-clickable fas fa-search"></i></button>
+                    {{! <button class="btn">Search
                 <i id="btn_search" class="is-clickable fas fa-search"></i>
             </button> }}
+                </div>
+            </form>
+            {{! <hr> }}
+
+            <div class="list-result"> {{! search result }}
+                {{#each spotresult}}
+                <p class="home-result"><a href="/result/{{this._id}}">{{this.name}}</a></p>
+                {{/each}}
             </div>
-        </form>
-        {{! <hr> }}
-
-        <div class="list-result"> {{! search result }}
-            {{#each spotresult}}
-            <p class="home-result"><a href="/result/{{this._id}}">{{this.name}}</a></p>
-            {{/each}}
-        </div>
 
 
 
 
-        <div class="selection-grid">
-            <a href="/">most viewed</a>
-            <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-            <a href="/">random</a>
-            {{! most viewed grid }}
-        </div>
+            <div class="selection-grid">
+                <a href="/">most viewed</a>
+                <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                <a href="/">random</a>
+                {{! most viewed grid }}
+            </div>
 
-        <div>
-            {{! random grid }}
-        </div>
+            <div>
+                {{! random grid }}
+            </div>
 
-    </section>
+        </section>
 
 
 
@@ -70,9 +70,10 @@
             }
     </style>
     <div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
-    <div><br /></div>
+  {{! <-- google map just here / don't ask how or why... }}
+        <div><br /></div>
 
-    {{!-- {{! Sign in }}
+        {{!-- {{! Sign in }}
 <section>
     <div>
         <h3><a href="/auth/signin">Sign in</a> </h3>
@@ -98,12 +99,12 @@
 </section> --}}
 
 
-    <div>
-        {{! comment here }}
-        <h4></h4> {{! pseudo }}
-        <p></p> {{! comment }}
-    </div>
-    </section>
+        <div>
+            {{! comment here }}
+            <h4></h4> {{! pseudo }}
+            <p></p> {{! comment }}
+        </div>
+        </section>
 
-</div>
+    </div>
 </div>

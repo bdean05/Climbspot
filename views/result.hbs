@@ -27,8 +27,9 @@
         <div style="background-image: url('{{searchresultdb.image}}')" class="pix-n-detail">
             {{!-- <img src="{{searchresultdb.image}}" alt=""> --}}
             <div class="speech">
-                <h2>{{searchresultdb.name}}</h2>
+                <h1>{{searchresultdb.name}}</h1>
                 <p>{{searchresultdb.description}}</p>
+                <h5>lat: {{searchresultdb.latitude}} | lng: {{searchresultdb.longitude}}</h5>
             </div>
         </div>
         <div id="map" class="result-map"></div>
@@ -43,10 +44,7 @@
             <p>{{searchresultdb.comments.content}}</p>
             {{/each}}
         </div>
-        <div class="comment-panel">
-            <div class="comment-fav"></div>
-            <a href="" class="comment-btn">Post a comment +</a>
-        </div>
+        <a href="/result/add-comment/{{searchresultdb._id}}" class="comment-btn">+ add a comment</a>
     </div>
 
 </section>
