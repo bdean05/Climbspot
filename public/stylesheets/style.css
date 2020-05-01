@@ -225,6 +225,7 @@ a:active {
 .description {
   height: 100px;
   width: 100px;
+  border: 1px, solid, black
 }
 
 .create-image img {
