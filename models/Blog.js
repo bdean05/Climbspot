@@ -5,6 +5,7 @@ const blogSchema = new Schema({
     date: String,
     title: String,
     text: String,
+    author: String,
     spot: {
         type: Schema.Types.ObjectId,
         ref: "Spot"

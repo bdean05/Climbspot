@@ -204,7 +204,22 @@ const articles = [{
     date: "Mai 1rst, 2020",
     title: "South of France, in the Drôme",
     text: "One of the main attraction is the mountain forests in the Drôme province. A mecca for most European boulder climbers, with 30 areas, each having with 50 to 100 routes . It is an incredible paradise for those wanting to explore climbing technics and train for bigger climbs, on a fine grit stone. In this forest a popular hike is the Circuit des 25 bosses (25 hills) providing an overall 1000m ascent. It takes a day to do it.",
+    author: "Hakim BF, our main man",
     image: "https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=993&q=80"
+  },
+  {
+    date: "April 28th, 2020",
+    title: "Gentle rock climbing course around Die, in the Drôme",
+    text: "This 3-day course is perfect to start climbing in natural site (block, cliff and Drôme river). It is particularly suitable for beginners or indoor climbers who wish to take their first step on the cliff. A progressive learning, adapted to each, will be done during these 3 days. The items are: alignment on a hold, breathing, placement and of course the techniques to be autonomous xhen leading. It is also a beautiful way to discover the beauty of the region of Die (Drôme) with the colors of autumn. In a beautiful cottage in the south Vercors. The meals cooked by Laurence with local and fresh products, will permit recovery and sharing.",
+    author: "Teddy Our, lead dev bud",
+    image: "https://images.unsplash.com/photo-1463567727315-4a5cc526b47c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+  },
+  {
+    date: "April 15th, 2020",
+    title: "Gentle rock climbing course around Die, in the Drôme",
+    text: "A real natural citadel made of limestone, the Vercors Regional Nature Park, straddling the departments of Drôme and Isère, covers 206,208 hectares and culminates in the Grand Veymont, at an altitude of 2,341 metres. The Vercors is popular for rock climbing, and in winter ski lifts punctuate the snowy landscape. It was a stronghold of the Resistance during the Nazi occupation, and in Vassieux-en-Vercors a memorial, museum and necropolis are dedicated to its members.",
+    author: "Olivier Burns, best firefighter",
+    image: "https://images.unsplash.com/photo-1560539517-86e5c7fefb65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
   }
 ];
 
