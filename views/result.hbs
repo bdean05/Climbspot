@@ -1,6 +1,3 @@
-{{! Google map default params /!\ do not delete}}
-
-
 <div id="showOnMap" data-latitude={{searchresultdb.latitude}} data-longitude={{searchresultdb.longitude}}>
 </div>
 
@@ -19,13 +16,10 @@
 
 <img src="{{searchresultdb.image}}" class="result-background"></img>
 
-{{!-- <img class="result-background" src="{{searchresultdb.image}}"> --}}
-
 <section class="result-card">
 
     <div class="pix-n-map">
         <div style="background-image: url('{{searchresultdb.image}}')" class="pix-n-detail">
-            {{!-- <img src="{{searchresultdb.image}}" alt=""> --}}
             <div class="speech">
                 <h1>{{searchresultdb.name}}</h1>
                 <p>{{searchresultdb.description}}</p>

@@ -1,0 +1,36 @@
+/* BUTTON CLASS */
+.sbmit-btn {
+        background: linear-gradient(#427a59, #035f87);
+        border: 10px solid linear-gradient(#427a59, #035f87);
+        border-radius: 30px;
+        color: white;
+        font-size: 12px;
+        width: 150px;
+        height: 37px;
+}
+
+.search-bar {
+        background: linear-gradient(#427a59, #035f87);
+        border: 10px solid linear-gradient(#427a59, #035f87);
+        border-radius: 30px;
+        color: white;
+        font-size: 12px;
+}
+
+/* FORM CLASS */
+
+
+/* TEXT CLASS */
+
+
+/* CARD CLASS */
+
+
+/* COLORS CLASS */
+.green-gradient{
+
+}
+
+.white-gradient{
+
+}

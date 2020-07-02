@@ -1,17 +1,5 @@
 <div class="create-image">
     <div class="white-frame">
-
-        {{!-- <thead class="nav-manage">
-            <th>Name :</th>
-            <th>Ref</th>
-            <th>Adress</th>
-            <th>Lattitude</th>
-            <th>Longitude</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Category</th>
-        </thead>
-        <hr> --}}
         <div>
             {{#each spots}}
             <p>Name : {{this.name}}</p>
@@ -29,35 +17,5 @@
             {{/each}}
 
         </div>
-
-        {{!-- <table class="table">
-    <thead>
-        <th>Name </th>
-        <th>Ref</th>
-        <th>Adress</th>
-        <th>Lattitude</th>
-        <th>Longitude</th>
-        <th>Image</th>
-        <th>Description</th>
-        <th>Category</th>
-    </thead>
-
-    <tbody>
-        {{#each spots}}
-        <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.ref}}</td>
-            <td>{{this.adress}}</td>
-            <td>{{this.latitude}}</td>
-            <td>{{this.longitude}}</td>
-            <td><img src="{{this.image}}" /></td>
-            <td>{{this.description}}</td>
-            <td>{{this.category}}</td>
-            <td> <a href="/spots/edit/{{this._id}}"><span style="text-decoration: underline;">Edit</span></a>/ <a class="link" r
-                    href="/spots/delete/{{this._id}}"><span style="text-decoration: underline;">Delete</span></a></td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table> --}}
     </div>
 </div>

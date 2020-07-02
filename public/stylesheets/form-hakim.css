@@ -1,0 +1,25 @@
+.form {
+    height: auto;
+}
+
+.form-group {
+    color: #3a664d;
+    border: 10px solid linear-gradient(#427a59, #035f87);
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.label {
+    width: 100%;
+    //border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    width: 100%;
+    //border: 1px solid green;
+    display: flex;
+    align-items: center;
+}
