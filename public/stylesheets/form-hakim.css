@@ -17,7 +17,7 @@
 
 .label {
     width: 100%;
-    /*border: 1px solid blue;*/
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: center;
 }
@@ -74,8 +74,10 @@
   width: 240px;
   background-color: rgba(66, 122, 82, 0);*/
     color: black;
-
+    /* border: 1px solid green; */
     outline: none;
+    display: flex;
+    align-items: center;
 }
 
 /*Modif style.css*/
