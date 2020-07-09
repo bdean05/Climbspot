@@ -1,0 +1,86 @@
+.form {
+    height: auto;
+    border: 1px solid purple;
+    margin: auto;
+}
+
+.form-group {
+    color: #3a664d;
+    border: 10px solid linear-gradient(#427a59, #035f87);
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+    /*border: 1px solid red;*/
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.label {
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    width: 100%;
+    /*background-color: rgba(66, 122, 82, 0);*/
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.contactus {
+    margin-left: auto;
+}
+
+.contactus-input {
+    width: 40vw;
+}
+
+.contactus-area {
+    width: 40vw;
+    height: 10vh;
+}
+
+.edit-spot {
+    background-image: url(../images/index-background2.jpg);
+    width: 100%;
+    /*background-position: top;
+    background-size: cover;
+    padding: 10% 0px 5% 0px;*/
+    padding: 120px 0px 350px 0px;
+}
+
+/*Modif style.css*/
+.edit-image {
+    /*height: 100px;
+  background-color: white;
+  enlevé par Hakim*/
+    width: 100px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 50px;
+    width: 60vw;
+    background-position: top;
+    background-size: cover;
+    padding: 50px 0px 0px 0px;
+}
+
+.input {
+    /*Commenté par Hakim
+  width: 240px;
+  background-color: rgba(66, 122, 82, 0);*/
+    color: black;
+    /* border: 1px solid green; */
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+
+/*Modif style.css*/
+/*copie about.hbs
+<div class="message-form"><h1>Contact us !</h1></br><form class="contactus"action="mailto:benjamin_h_dean@yahoo.com"method="post"enctype="text/plain">Your name:<br><input class="contactus-input"type="text"name="name"><br>Your e-mail:<br><input class="contactus-input"type="text"name="mail"><br>Your message:<br><textarea class="contactus-area"placeholder="Your message"></textarea>< !--<input class="input"type="text-area"name="message"size="40"><br><br><input type="submit"value="Send"class="search-box"> !--></form></div>
+*/

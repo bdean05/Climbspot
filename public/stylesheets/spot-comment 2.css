@@ -1,9 +1,13 @@
 .commentBackground {
+    /* position: relative; */
     filter: blur(5px) grayscale(100%) brightness(60%);
     filter: blur(8px);
     -webkit-filter: blur(8px);
     width: 100vw;
     height: 100vh;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .commentCard {
@@ -26,24 +30,25 @@
     justify-content: center;
     align-items: flex-end;
     box-shadow: 0px 20px 80px black;
-
+    
 }
 
 .comment-form h2 {
+    /* border: 1px dotted red; */
     border-radius: 10px 10px 0px 0px;
     height: 45px;
     width: 350px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
-
+    
 }
 
 .comment-title {
-    color: #606060;
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 30px;
+color: #606060;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .comment-input1 {

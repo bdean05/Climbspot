@@ -1,72 +1,52 @@
 <div class="index-body">
-    <div>{{! with title and background image }}
+    <div>
         <header class="home-image">
             <h1 class="home-logo">ClimbSpot.</h1>
-            {{! <div></div><-- background here }}
         </header>
 
-
-        {{! search - most viewed - random }}
         <section>
-            {{! <hr> }}
             <form class="form" id="search_bar" method='GET' action="/">
                 <div class="search-box">
                     <input id="search_query" type="text" class="input-search" value="" placeholder="Find your spot..."
                         name="search">
                     <button class="btn-search"><i class="is-clickable fas fa-search"></i></button>
-                    {{! <button class="btn">Search
-                <i id="btn_search" class="is-clickable fas fa-search"></i>
-            </button> }}
                 </div>
             </form>
-            {{! <hr> }}
 
-            <div class="list-result"> {{! search result }}
+            <div class="list-result">
                 {{#each spotresult}}
                 <p class="home-result"><a href="/result/{{this._id}}">{{this.name}}</a></p>
                 {{/each}}
             </div>
 
+            <div class="selection-grid">
 
+                <h3 style="margin-top: 5px;">voici notre selection...</h3>
 
+                <div class="selection-box">
+                    <h4>Label<h4>
+                            <h5>latitude: 44.65345<br />longitude: 5.171185</h5>
+                </div>
 
-        <div class="selection-grid">
-                
-            <h3 style="margin-top: 5px;">Here's our current selection...</h3>
-                 
-            <div class="selection-box">
-            <h4>Label<h4>
-            <h5>latitude: 44.65345<br />longitude: 5.171185</h5>
+                <div class="selection-box">
+                    <h4>La Graville<h4>
+                            <h5>latitude: 44.648761<br />longitude: 5.078759</h5>
+                </div>
+
+                <div class="selection-box">
+                    <h4>Le mur des étoiles<h4>
+                            <h5>latitude: 44.652589<br />longitude: 5.066158</h5>
+                </div>
+
             </div>
 
-            <div class="selection-box">
-            <h4>La Graville<h4>
-            <h5>latitude: 44.648761<br />longitude: 5.078759</h5>
-            </div>
+    </div>
 
-            <div class="selection-box">
-            <h4>Le mur des étoiles<h4>
-            <h5>latitude: 44.652589<br />longitude: 5.066158</h5>
-            </div>
+    <div>
+    </div>
 
-        </div>
+    </section>
 
-                {{! <a href="/">most viewed</a> }}
-                {{! <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a> }}
-                {{! <a href="/">random</a> }}
-                {{! most viewed grid }}
-            </div>
-
-            <div>
-                {{! random grid }}
-            </div>
-
-        </section>
-
-
-
-
-    {{! Google map }}
     <style>
         #map {
             height: 400px;
@@ -77,54 +57,23 @@
             margin-right: auto;
             margin-bottom: 150px;
         }
-         @media only screen and (min-width: 320px) and (max-width: 768px) {
-            #map { 
-            height: 400px;
-            width: 90%;
-            border-radius: 0px 0px 12px 12px;
-            box-shadow: 1px 6px 11px gray;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 150px;
-                }
+
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            #map {
+                height: 400px;
+                width: 90%;
+                border-radius: 0px 0px 12px 12px;
+                box-shadow: 1px 6px 11px gray;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 150px;
             }
+        }
     </style>
-    <div id="map"></div> {{! <-- google map just here / don't ask how or why... }}
-  {{! <-- google map just here / don't ask how or why... }}
-        <div><br /></div>
+    <div id="map"></div>
+    <div><br /></div>
 
-        {{!-- {{! Sign in }}
-<section>
-    <div>
-        <h3><a href="/auth/signin">Sign in</a> </h3>
-        <form action="" method="post">
-            <input type="text">
-            <input type="text">
-            <buton>Submit</buton>
-        </form>
-    </div>
-</section>
+    </section>
 
-
-{{! Sign up }}
-<section>
-    <div>
-        <h3><a href="/auth/signup">Sign up</a> </h3>
-        <form action="" method="post">
-            <input type="text">
-            <input type="text">
-            <buton>Submit</buton>
-        </form>
-    </div>
-</section> --}}
-
-
-        <div>
-            {{! comment here }}
-            <h4></h4> {{! pseudo }}
-            <p></p> {{! comment }}
-        </div>
-        </section>
-
-    </div>
+</div>
 </div>
