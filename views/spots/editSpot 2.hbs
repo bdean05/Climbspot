@@ -1,41 +1,38 @@
-<div class="edit-spot">
-    <div class="white-frame">
-        <form class="form" action="/spots/edit/{{spot._id}}" method="POST">
+<div class="edit-image">
+    <div class="edit-image">
+        <form class="edit-image" action="/spots/edit/{{spot._id}}" method="POST">
             <h2 class="edit-image">Edit the spot "{{spot.name}}"</h2>
             <div class="form-group">
                 <label class="label" for="name">Name</label>
                 <input class="input" id="name" type="text" name="name" required="true" value=" {{spot.name}} ">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="label" for="ref">Ref</label>
                 <input class="input" id="ref" type="text" name="ref" required="true" value=" {{spot.ref}} ">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="label" for="address">Address</label>
                 <input class="input" id="address" type="text" name="address" required="true" value=" {{spot.address}}">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="label" for="latitude">Latitude</label>
                 <input class="input" id="latitude" type="text" name="latitude" required="true"
                     value=" {{spot.latitude}} ">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="label" for="longitude">Longitude</label>
                 <input class="input" id="longitude" type="text" name="longitude" required="true"
                     value=" {{spot.longitude}} ">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="label" for="image">Image</label>
                 <input class="input" id="image" type="text" name="image" value="{{spot.image}} ">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="description" for="description">Description</label>
-                <!-- <input class="input" id="description" type="text" name="description" value=" {{spot.description}} ">
-                Rajouté par Hakim, à valider -->
-                <textarea class="input" id="description" type="text" name="description"
-                    value=" {{spot.description}} "></textarea>
+                <input class="input" id="description" type="text" name="description" value=" {{spot.description}} ">
             </div>
-            <div class="form-group">
+            <div class="edit-image">
                 <label class="label" for="category">Category</label>
                 <input class="input" id="category" type="text" name="category" value=" {{spot.category}} ">
             </div>
@@ -44,7 +41,7 @@
             <p>{{error}}</p>
             {{/if}}
 
-            <button class="request-box" style="text-align: center;">Submit</button>
+            <button class="btn">Submit</button>
         </form>
     </div>
 </div>

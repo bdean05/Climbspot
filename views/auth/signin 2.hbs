@@ -1,0 +1,25 @@
+<div class="sign-background1">
+    <section class="formCard">
+
+
+        {{#if error}}
+        <p>{{error}}</p>
+        {{/if}}
+        <form autocomplete="off" class="sign-in-form1" method="POST" action="/auth/signin">
+            <h2 class="sign-title">Sign in</h2>
+            <div>
+                {{!-- <label class="label" for="username">Username</label> --}}
+                <input class="form-input1" id="username" type="username" name="username"
+                    placeholder="Enter your username" required="true" value="toto">
+            </div>
+
+            <div>
+                {{!-- <label class="label" for="password">Password</label> --}}
+                <input class="form-input2" id="password" type="password" name="password" placeholder="********"
+                    required="true" value="1234">
+            </div>
+            <a class="sign-link" href="/auth/signup">Don't have an account yet ? Sign up !</a>
+            <button class="sign-btn">Submit</button>
+        </form>
+    </section>
+</div>
