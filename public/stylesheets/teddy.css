@@ -1,4 +1,4 @@
-/* BUTTON CLASS */
+/* BUTTON CLASSES */
 .sbmt-btn {
         border-radius: 30px;
         color: white;
@@ -6,37 +6,77 @@
         margin: 30px;
 }
 
-#search-bar {
-        font-size: 12px;
+
+/* FORM CLASSES */
+.frm-input {
+        border: none;
+        outline: none;
+        text-align: center;
+        height: 35px;
+        box-shadow: inset 0px 2px 3px grey;
+        margin: 15px;
 }
 
-/* FORM CLASS */
+.txt-area {
+        border: none;
+        outline: none;
+        width: 330px;
+        height: 280px;
+        box-shadow: inset 0px 2px 3px grey;
+        padding: 6px;
+        margin: 15px;
+}
 
-
-/* TEXT CLASS */
-.txt-box {
+/* TEXT CLASSES */
+.txt-div {
         outline: none;
         border: none;
 }
 
-.txt-clr-black {
+.txt-black {
         color: rgb(49, 49, 49);
 }
 
-.txt-clr-white {
+.txt-white {
         color: rgb(209, 209, 209);
 }
 
-/* CARD CLASS */
-brd-rds-big {
+.txt-green {
+        color: rgb(24, 105, 71);
+}
+
+.font-big {
+        font-size: 30px;
+}
+
+.font-medium {
+        font-size: 15px;
+        font-weight:bold
+}
+
+.font-small {
+        font-size: 12px;
+}
+
+.font-micro {
+        font-size: 9px;
+        font-weight: lighter;
+}
+
+/* CARD CLASSES */
+.brd-rds-big {
         border-radius: 15px;
 }
 
-brd-rds-small {
-        border-radius: 10px;
+.brd-rds-medium {
+        border-radius: 9px;
 }
 
-/* COLORS CLASS */
+.brd-rds-small {
+        border-radius: 6px;
+}
+
+/* COLORS CLASSES */
 .green-grdnt {
         background: linear-gradient(#427a59, #035f87);
         border: 10px solid linear-gradient(#427a59, #035f87);
@@ -48,8 +88,23 @@ brd-rds-small {
 }
 
 .element-shdw {
-        -moz-box-shadow: 0px 5px 5px 0px #999;
-        -webkit-box-shadow: 0px 5px 5px 0px #999;
         box-shadow: 0px 5px 5px 0px #999;
 }
 
+.element-shdw-strong {
+        box-shadow: 0px 20px 80px black;
+}
+
+/* BACKGROUND CLASSES */
+
+.blur-bckgrnd {
+        width: 100vw;
+        height: 100vh;
+        filter: blur(5px) grayscale(20%) brightness(120%);
+}
+
+.blur-bckgrnd-strong {
+        width: 100vw;
+        height: 100vh;
+        filter: blur(85px) grayscale(55%) brightness(160%);
+}
