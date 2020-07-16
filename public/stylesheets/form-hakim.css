@@ -21,13 +21,8 @@
     justify-content: center;
 }
 
-.input {
-    width: 100%;
-    /*background-color: rgba(66, 122, 82, 0);*/
-    border: 3px solid black;
-    display: flex;
-    align-items: center;
-}
+
+
 
 .contactus {
     margin-left: auto;
@@ -68,16 +63,7 @@
     padding: 50px 0px 0px 0px;
 }
 
-.input {
-    /*Commenté par Hakim
-  width: 240px;
-  background-color: rgba(66, 122, 82, 0);*/
-    color: black;
-    /* border: 1px solid green; */
-    outline: none;
-    display: flex;
-    align-items: center;
-}
+
 
 /*Modif style.css*/
 /*copie about.hbs
