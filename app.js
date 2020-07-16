@@ -79,18 +79,19 @@ app.use("/", require("./routes/spots"));
 app.use("/", require("./routes/result"));
 app.use("/", require("./routes/about"));
 app.use("/", require("./routes/blog"));
+app.use("/", require("./routes/userEdit"));
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
