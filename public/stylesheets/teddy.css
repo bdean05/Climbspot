@@ -1,18 +1,29 @@
 /* BUTTON CLASSES */
 .sbmt-btn {
         border-radius: 30px;
-        color: white;
+        outline: none;
         padding: 20%;
         margin: 30px;
+        height: 33px;
+        text-align: center;
 }
 
+.opt-btn {
+        border-radius: 8px;
+        outline: none;
+        padding: 20%;
+        margin: 9px;
+        height: 33px;
+        text-align: center;
+}
 
+/*-------------------------------------------------------------*/
 /* FORM CLASSES */
 .frm-input {
         border: none;
         outline: none;
         text-align: center;
-        height: 35px;
+        height: 33px;
         box-shadow: inset 0px 2px 3px grey;
         margin: 15px;
 }
@@ -27,10 +38,13 @@
         margin: 15px;
 }
 
-/* TEXT CLASSES */
+/*-------------------------------------------------------------*/
+/* TEXT COLORS & SIZES CLASSES */
 .txt-div {
         outline: none;
         border: none;
+        padding: 10%;
+        text-align: left;
 }
 
 .txt-black {
@@ -63,7 +77,8 @@
         font-weight: lighter;
 }
 
-/* CARD CLASSES */
+/*-------------------------------------------------------------*/
+/* BORDER RADIUS CLASSES */
 .brd-rds-big {
         border-radius: 15px;
 }
@@ -75,8 +90,8 @@
 .brd-rds-small {
         border-radius: 6px;
 }
-
-/* COLORS CLASSES */
+/*-------------------------------------------------------------*/
+/* BACKGOUND COLORS & SHADOW EFFECTS CLASSES*/
 .green-grdnt {
         background: linear-gradient(#427a59, #035f87);
         border: 10px solid linear-gradient(#427a59, #035f87);
@@ -95,8 +110,8 @@
         box-shadow: 0px 20px 80px black;
 }
 
-/* BACKGROUND CLASSES */
-
+/*-------------------------------------------------------------*/
+/* BACKGROUND IMAGE EFFECTS CLASSES */
 .blur-bckgrnd {
         width: 100vw;
         height: 100vh;
