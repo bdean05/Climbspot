@@ -59,6 +59,10 @@
         color: rgb(24, 105, 71);
 }
 
+.txt-shdw {
+        text-shadow: 1px 2px 7px rgb(34, 34, 34);
+}
+
 .font-big {
         font-size: 30px;
 }
@@ -75,7 +79,9 @@
 .font-micro {
         font-size: 9px;
         font-weight: lighter;
+        text-decoration: none;
 }
+
 
 /*-------------------------------------------------------------*/
 /* BORDER RADIUS CLASSES */
@@ -109,6 +115,7 @@
 .element-shdw-strong {
         box-shadow: 0px 20px 80px black;
 }
+
 
 /*-------------------------------------------------------------*/
 /* BACKGROUND IMAGE EFFECTS CLASSES */
