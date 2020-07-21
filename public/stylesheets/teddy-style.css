@@ -166,3 +166,12 @@ body {
         height: 100vh;
         filter: blur(85px) grayscale(55%) brightness(160%);
 }
+
+/*-------------------------------------------------------------*/
+/* exemple of class... */
+
+/* 
+exemple of class for the button :
+<button id="submit-button" class="sbmt-btn txt-white font-small green-grdnt element-shdw"> One Buuton </button>
+
+*/
