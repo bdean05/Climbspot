@@ -2,19 +2,36 @@
     <section class="formCard">
         <form class="sign-in-form2" action="/auth/signup" method="POST">
             <h2 class="sign-title">My profile</h2>
+
             <div>
-                <label class="label" for="name">Name</label>
-
-                <input class="form-input1" type="text" name="username" placeholder="Your username" required="true"
-                    value="toto">
-
+                <label class="label" for="username">Username</label>
+                <input class="form-inputHakim1" type="text" name="username" placeholder="Your username" required="true"
+                    {{!-- value="toto" --}}>
             </div>
-
             <div>
-                <label class="label" for="password">Password</label>
-
-                <input class="form-input2" type="password" name="password" placeholder="*********" required="true"
-                    value="1234">
+                <label class="label" for="email">Email</label>
+                <input class="form-inputHakim1" type="text" name="email" placeholder="Your email" required="true"
+                    {{!-- value="toto@gmail.com" --}}>
+            </div>
+            <div>
+                <label class="label" for="firstName">First name</label>
+                <input class="form-inputHakim1" type="text" name="firstName" placeholder="Your firstName"
+                    required="true" {{!-- value="toto" --}}>
+            </div>
+            <div>
+                <label class="label" for="lastName">Last name</label>
+                <input class="form-inputHakim1" type="text" name="lastName" placeholder="Your lastName" required="true"
+                    {{!-- value="tata" --}}>
+            </div>
+            <div>
+                <label class="label" for="aboutMe">About me</label>
+                <input class="form-inputHakim1" type="text" name="aboutMe" placeholder="aboutMe" required="true"
+                    {{!-- value="I am Toto the best climbman in France!!!" --}}>
+            </div>
+            <div>
+                <label class="label" for="password">Pasword</label>
+                <input class="form-inputHakim2" type="password" name="password" placeholder="*********" required="true"
+                    {{!-- value="1234" --}}>
             </div>
 
             <button class="sign-btn">Submit</button>

@@ -16,6 +16,9 @@
 
 .label {
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
     /* border: 1px solid blue; */
     display: flex;
     justify-content: center;
@@ -63,9 +66,57 @@
     padding: 50px 0px 0px 0px;
 }
 
+.form-inputHakim1,
+.form-inputHakim2 {
+    /* color: #606060;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    width: 210px;
+    height: 37px;
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 3px grey;
+    border: none; */
+}
 
+.form-inputHakim1 {
+    top: 30%;
+}
 
-/*Modif style.css*/
-/*copie about.hbs
-<div class="message-form"><h1>Contact us !</h1></br><form class="contactus"action="mailto:benjamin_h_dean@yahoo.com"method="post"enctype="text/plain">Your name:<br><input class="contactus-input"type="text"name="name"><br>Your e-mail:<br><input class="contactus-input"type="text"name="mail"><br>Your message:<br><textarea class="contactus-area"placeholder="Your message"></textarea>< !--<input class="input"type="text-area"name="message"size="40"><br><br><input type="submit"value="Send"class="search-box"> !--></form></div>
-*/
+.form-inputHakim2 {
+    top: 60%;
+}
+
+.formCardSignup {
+    background-color: white;
+    width: 300px;
+    height: 105vh;
+    /* 380px; */
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 0px 20px 50px black;
+}
+
+.sign-in-formHakim2 {
+    background-color: rgb(16, 57, 80);
+    background-image: url("../images/sign-up-small.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.sign-in-formHakim2 {
+    width: 275px;
+    height: 520px;
+    position: absolute;
+    top: 310px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: inset 0px 3px 2px black;
+}
