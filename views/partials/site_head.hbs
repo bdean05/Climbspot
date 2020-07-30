@@ -1,14 +1,24 @@
+{{! *** THIS PAGE SHOULD BE FOR EXTERNAL APIs ONLY ! *** }}
+
+{{! all this part is not necessary since it's already on Layout view...}}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{! /all this part is not necessary since it's already on Layout view...}}
+
+{{! google map api script...}}
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwayBDtUp9H89-LbFDO1RlXOeBKaRRZEk">
 </script>
 
-<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/style.css"> {{! <-- this one must be on Layout view ! }}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 
 {{#each scripts}}
 <script type="module" src="/scripts/{{this}}"></script>
 {{/each}}
+{{! /google map api script...}}
 
+
+{{! this shoul be on Layout view...}}
 <title>ClimbSpot.</title>
+{{! /this shoul be on Layout view...}}

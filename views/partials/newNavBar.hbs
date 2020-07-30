@@ -1,0 +1,58 @@
+<nav>
+    {{#if isLoggedIn}}
+    <div class="nav-create-manage">
+        <h4 id="nav-list"><a href="/spots/create" class="create-manage-text">Create spot</a> <span
+                class="create-manage-text">|</span> <a href="/spots/manage" class="create-manage-text">Manage
+                spot</a>
+        </h4>
+    </div>
+    <div class="nav-bar-in">
+      
+        <ul id="nav-list">
+            <li><a class="nav-item" href="/">Home</a></li>
+            <li><a class="nav-item" href="/about">About</a></li>
+            <li><a class="nav-item" href="/blog">Blog</a></li>
+        </ul>
+        <ul class="sign-up-in">
+            <li><a href="userEdit">{{user.username}}</a></li>
+            {{!-- <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{user.username}}</a></li> --}}
+            <li><a class="nav-link" href="/auth/logout">Log out</a></li>
+        </ul>
+    </div>
+    {{else}}
+    <div class="nav-bar">
+        <ul id="nav-list">
+            <li><a class="nav-item" href="/">Home</a></li>
+            <li><a class="nav-item" href="/about">About</a></li>
+            <li><a class="nav-item" href="/blog">Blog</a></li>
+        </ul>
+        <ul class="sign-up-in">
+            <li><a class="nav-link" href="/auth/signin">Sign in</a></li>
+            <li><a class="nav-link" href="/auth/signup">Sign up</a></li>
+        </ul>
+    </div>
+    <div>
+    <a href="javascript:void(0);" class="mobile-icon" onclick="myFunction()">
+            <!--<i class="fa fa-bars"></i>-->
+            <img src="/images/mobile-menu-icon.png" style="background-color: rgba(201, 76, 76, 0);">
+        </a>
+        </div>
+    {{/if}}
+</nav>
+  <div id="myLinks" class="mobile-menu">
+    <div class="mobile-menu-item"><a href="/">Home</a></div>
+    <div class="mobile-menu-item"><a href="/about">About</a></div>
+    <div class="mobile-menu-item"><a href="/blog">Blog</a></div>
+    <div class="mobile-menu-item"><a href="/auth/signin">Sign in</a></div>
+    <div class="mobile-menu-item"><a href="/auth/signup">Sign up</a></div>
+  </div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
