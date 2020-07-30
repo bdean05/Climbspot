@@ -1,0 +1,27 @@
+<header id="blog-image">
+    </header>
+
+<div class="page-bkgrnd-white" style="background-image: url('{{randomSpot.image}}')">
+
+    <section id="blog-page">
+
+        <h1 class="txt-green font-big">Blog<br /></h1>
+
+        
+        {{#each articles}}
+        <div id="blog-post" class="txt-black brd-rds-medium element-shdw white-grdnt">
+            <div id="blog-article">
+                <div id="blog-content">
+                    <h2 id="post-title" class="font-medium">{{this.title}}</h2>
+                    <p id="article-speech" class="font-small">{{this.text}}</p>
+                </div>
+                <span id="post-author" class="font-micro">{{this.author}}</span>
+                <span class="font-micro">{{this.date}}</span>
+            </div>
+            <div id="post-image-div" style="background-image: url('{{this.image}}')"></div>
+        </div>
+        {{/each}}
+
+    </section>
+
+    </div>

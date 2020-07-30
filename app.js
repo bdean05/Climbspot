@@ -81,6 +81,9 @@ app.use("/", require("./routes/about"));
 app.use("/", require("./routes/blog"));
 app.use("/", require("./routes/userEdit"));
 
+app.use('/', require('./routes/teddy-result'));
+app.use('/', require('./routes/teddy-blog'));
+
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

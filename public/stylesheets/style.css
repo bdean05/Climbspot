@@ -17,7 +17,7 @@ body {
   background-position: top;
 }
 
-a {
+/* a {
   color: black;
   text-decoration: none;
 }
@@ -29,7 +29,7 @@ a:hover {
 a:active {
   font-weight: bold;
   text-decoration: underline;
-}
+} */
 
 .search-box {
   background: linear-gradient(#427a59, #035f87);

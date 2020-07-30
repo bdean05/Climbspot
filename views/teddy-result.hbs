@@ -1,0 +1,64 @@
+<div id="showOnMap" data-latitude={{searchresultdb.latitude}} data-longitude={{searchresultdb.longitude}}>
+</div>
+
+
+<div class="page-bkgrnd-black" style="background-image: url('{{searchresultdb.image}}')">
+
+<article>
+
+        <div id="result-detail" class="">
+            <div id="speech" class="txt-white">
+                <h1 class="font-big">{{searchresultdb.name}}</h1>
+                <p class="font-small">{{searchresultdb.description}}</p>
+                <h5 id="geoloc" class="font-small element-shdw">lat: {{searchresultdb.latitude}} | lng: {{searchresultdb.longitude}}</h5>
+                {{!-- <img id="down-arrow" src="../images/down-arrow-white.png" alt="down arrow"></img> --}}
+
+                <div id="down-arrow" >
+                    <img src="../images/down-arrow-white.png" alt="down arrow"></img>
+                </div>
+                
+            </div>
+                
+        </div>
+
+        <div id="map" class="brd-rds-medium element-shdw-strong"></div>
+     
+
+
+
+    <section id="comment-layout" >
+        <section id="comment-section">
+
+            <section id="comment-info">
+                <span id="comment-counter" class="opt-btn"> {{searchresultdb.comments.length}} comment(s) </span>
+                <a href="/teddy-result/teddy-add-comment/{{searchresultdb._id}}" id="add-comment" class="post-btn"> + add a comment </a>
+            </section id>
+
+        
+                {{#each searchresultdb.comments}}
+                <div id="one-comment" class="light-brd brd-rds-small element-shdw white-grdnt">
+                    
+                    <span class="txt-green font-small">{{this.username.username}}</span>:<br>
+                    <span class="txt-black font-micro">{{this.content}}</span><br>
+                    
+                </div>
+                {{/each}}
+            
+
+        </section>
+
+        <section id="comment-window">
+            <form id="form-comment" class="brd-rds-small white-grdnt element-shdw" autocomplete="off" method="POST" action="/teddy-result/teddy-add-comment/{{searchresultdb_edit._id}}">
+                <h2 class="txt-green font-medium">Add a comment</h2>
+
+            
+                <textarea id="comment-area" class="txt-area txt-black font-small" type="text" name="content" placeholder="write your comment just right here" required="true" value="some comment"></textarea>
+                
+
+                <button id="comment-btn" class="post-btn">post your comment</button>
+            </form>
+        </section>
+
+    </section>
+</article>
+</div>
