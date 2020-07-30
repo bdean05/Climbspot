@@ -28,7 +28,6 @@ function initMapOneSpot() {
     }).catch(apiErr => {
         console.log(apiErr)
     })
-    console.log(spotMarker)
 }
 
 
