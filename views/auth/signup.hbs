@@ -1,23 +1,58 @@
 <div class="sign-background2">
-    <section class="formCard">
+    <section class="formCardSignup">
 
 
         {{#if error}}
         <p>{{error}}</p>
         {{/if}}
-        <form class="sign-in-form2" action="/auth/signup" method="POST">
+        <form class="sign-in-formHakim2" action="/auth/signup" method="POST">
             <h2 class="sign-title">Sign up</h2>
+            {{!-- <div>
+                <label class="label" for="image">Image</label>
+                <input class="form-inputHakim1" type="image" name="image" placeholder="Your photo" required="false">
+            </div> --}}
+
             <div>
-                <input class="form-input1" type="text" name="username" placeholder="Your username" required="true"
+                <label class="label" for="username">Username</label>
+                <input class="form-inputHakim1" type="text" name="username" placeholder="Your username" required="true"
                     value="toto">
 
             </div>
+            <div>
+                <label class="label" for="email">Email</label>
+                <input class="form-inputHakim1" type="text" name="email" placeholder="Your email" required="true"
+                    value="toto@gmail.com">
+
+            </div>
+            <div>
+                <label class="label" for="firstName">First name</label>
+                <input class="form-inputHakim1" type="text" name="firstName" placeholder="Your firstName"
+                    required="true" value="toto">
+
+            </div>
+            <div>
+                <label class="label" for="lastName">Last name</label>
+                <input class="form-inputHakim1" type="text" name="lastName" placeholder="Your lastName" required="true"
+                    value="tata">
+
+            </div>
+            <div>
+                <label class="label" for="aboutMe">About me</label>
+                <input class="form-inputHakim1" type="text" name="aboutMe" placeholder="aboutMe" required="true"
+                    value="I am Toto the best climbman in France!!!">
+
+            </div>
 
             <div>
-                <input class="form-input2" type="password" name="password" placeholder="*********" required="true"
+                <label class="label" for="password">Pasword</label>
+                <input class="form-inputHakim2" type="password" name="password" placeholder="*********" required="true"
                     value="1234">
             </div>
-            <a class="sign-link" href="/auth/signup">Already have an account? ? Sign in !</a>
+            <div>
+                <a class="sign-link" href="/auth/signup">Already have an account? ? Sign in
+                    !</a>
+            </div>
+
             {{#if errorMessage}}
             <div class="error-message">{{errorMessage}}</div>
             {{/if}}

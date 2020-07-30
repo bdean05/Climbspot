@@ -1,5 +1,7 @@
 require("dotenv").config();
 require("./config/dbConnection");
+require("./models/User");
+
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -70,6 +72,7 @@ mongoose
   });
 
 //Routes configuration
+app.use(require("./routes"));
 app.use("/", require("./routes/spots.api"));
 const indexRouter = require("./routes/index");
 app.use("/", require("./routes/index"));
@@ -80,6 +83,7 @@ app.use("/", require("./routes/result"));
 app.use("/", require("./routes/about"));
 app.use("/", require("./routes/blog"));
 app.use("/", require("./routes/userEdit"));
+// Ligne ci-dessous rajouté par Hakim
 
 app.locals.site_url = process.env.SITE_URL;
 // catch 404 and forward to error handler
