@@ -22,7 +22,7 @@ body {
         font-family: "Montserrat Alternates", sans-serif;
         text-align: center;
       }
-* a {
+a {
         text-decoration: none;
         color: black;
 }
@@ -36,7 +36,7 @@ body {
 }
 
 .page-bkgrnd-white {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
