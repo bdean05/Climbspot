@@ -1,11 +1,6 @@
 <nav>
     {{#if isLoggedIn}}
-    <div class="nav-create-manage">
-        <h4 id="nav-list"><a href="/spots/create" class="create-manage-text">Create spot</a> <span
-                class="create-manage-text">|</span> <a href="/spots/manage" class="create-manage-text">Manage
-                spot</a>
-        </h4>
-    </div>
+
     <div class="nav-bar-in">
       
         <ul id="nav-list">
@@ -18,6 +13,12 @@
             {{!-- <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{user.username}}</a></li> --}}
             <li><a class="nav-link" href="/auth/logout">Log out</a></li>
         </ul>
+    </div>
+    <div class="nav-create-manage">
+        <h4 id="nav-list"><a href="/spots/create" class="create-manage-text">Create spot</a> <span
+                class="create-manage-text">|</span> <a href="/spots/manage" class="create-manage-text">Manage
+                spot</a>
+        </h4>
     </div>
     {{else}}
     <div class="nav-bar">
@@ -55,4 +56,45 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+
+
+//////////// STICKY NAVBAR /////////
+// Get the navbar
+var navbar = document.getElementsByClassName("nav-bar")[0];
+var navbarin = document.getElementsByClassName("nav-bar-in")[0]
+// Get the offset position of the navbar
+
+var sticky = (navbar ? navbar.offsetTop : navbarin.offsetTop); // ternaire en Javascript: si navbar existe alore sticky prend la valeur de navbar.offsetTop sinon sticky prend la valeur de navbarin.offsetTop
+
+// When the user scrolls the page, execute this function
+window.onscroll = applySticky
+
+
+function applySticky (){
+  if(navbar){
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }else{
+    let navcreatemanage = document.getElementsByClassName("nav-create-manage")[0]
+    let stickyCreateManage = navcreatemanage.offsetTop;
+      
+    // the same for navbarin
+    if(window.pageYOffset >= sticky){
+      navbarin.classList.add("sticky")
+      navcreatemanage.classList.add("sticky-manage")
+    }else{
+      navbarin.classList.remove("sticky")
+      navcreatemanage.classList.remove("sticky-manage")
+
+    }
+
+
+  }
+}
+
+
+
 </script>
