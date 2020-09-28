@@ -14,6 +14,12 @@
             <li><a class="nav-link" href="/auth/logout">Log out</a></li>
         </ul>
     </div>
+    <div>
+      <a href="javascript:void(0);" class="mobile-icon" onclick="myFunction()">
+          <!--<i class="fa fa-bars"></i>-->
+          <img src="/images/mobile-menu-icon.png" style="background-color: rgba(201, 76, 76, 0);">
+      </a>
+    </div>
     <div class="nav-create-manage">
         <h4 id="nav-list"><a href="/spots/create" class="create-manage-text">Create spot</a> <span
                 class="create-manage-text">|</span> <a href="/spots/manage" class="create-manage-text">Manage
@@ -40,13 +46,23 @@
         </div>
     {{/if}}
 </nav>
+{{#if isLoggedIn}}
   <div id="myLinks" class="mobile-menu">
+    <div class="mobile-menu-item"><a href="/">Home</a></div>
+    <div class="mobile-menu-item"><a href="/about">About</a></div>
+    <div class="mobile-menu-item"><a href="/blog">Blog</a></div>
+    <div class="mobile-menu-item"><a href="userEdit">{{user.username}}</a></div>
+    <div class="mobile-menu-item"><a href="/auth/logout">Log out</a></div>
+  </div>
+   {{else}}
+     <div id="myLinks" class="mobile-menu">
     <div class="mobile-menu-item"><a href="/">Home</a></div>
     <div class="mobile-menu-item"><a href="/about">About</a></div>
     <div class="mobile-menu-item"><a href="/blog">Blog</a></div>
     <div class="mobile-menu-item"><a href="/auth/signin">Sign in</a></div>
     <div class="mobile-menu-item"><a href="/auth/signup">Sign up</a></div>
   </div>
+  {{/if}}
 <script>
 function myFunction() {
   var x = document.getElementById("myLinks");
@@ -62,9 +78,10 @@ function myFunction() {
 // Get the navbar
 var navbar = document.getElementsByClassName("nav-bar")[0];
 var navbarin = document.getElementsByClassName("nav-bar-in")[0]
-// Get the offset position of the navbar
 
-var sticky = (navbar ? navbar.offsetTop : navbarin.offsetTop); // ternaire en Javascript: si navbar existe alore sticky prend la valeur de navbar.offsetTop sinon sticky prend la valeur de navbarin.offsetTop
+// Get the offset position of the navbar
+var sticky = (navbar ? navbar.offsetTop : navbarin.offsetTop); // ternaire en Javascript: 
+// si navbar existe alore sticky prend la valeur de navbar.offsetTop sinon sticky prend la valeur de navbarin.offsetTop
 
 // When the user scrolls the page, execute this function
 window.onscroll = applySticky
