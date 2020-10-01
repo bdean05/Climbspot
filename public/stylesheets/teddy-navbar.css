@@ -236,13 +236,12 @@
       font-size: 20px;
       position: relative;
       padding: 10px 0px 10px 0px;
-      margin-top: -155px;
+      margin-top: -55px;
     }
 
     .mobile-icon {
       opacity: 100;
       display: block;
-      height: 115px;
       padding: 15px;
       text-align: right;
     }
